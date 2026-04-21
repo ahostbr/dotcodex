@@ -1,0 +1,82 @@
+[
+  {
+    "query": "hey so I have this excalidraw file at docs/arch.excalidraw that shows our old microservices layout, can you update it to show the new gateway service we added?",
+    "should_trigger": true
+  },
+  {
+    "query": "can you read through apps/desktop/architecture.excalidraw.json and tell me what components are in there? I need a summary for the design doc",
+    "should_trigger": true
+  },
+  {
+    "query": "I've got two excalidraw diagrams — one in docs/v1-arch.excalidraw and one in docs/v2-arch.excalidraw. Can you compare them and tell me what changed between the versions?",
+    "should_trigger": true
+  },
+  {
+    "query": "there's an excalidraw file somewhere in the repo that has our data flow diagram, can you find it and explain what it shows?",
+    "should_trigger": true
+  },
+  {
+    "query": "the diagram at Docs/Plans/system-overview.excalidraw.json is outdated — we renamed the AuthService to IdentityService, can you fix that in the file?",
+    "should_trigger": true
+  },
+  {
+    "query": "I need you to look at the .excalidraw file in our docs folder and add a new database node connected to the API service",
+    "should_trigger": true
+  },
+  {
+    "query": "what's in the excalidraw diagram at infra/network-topology.excalidraw? just give me the high-level components, don't need all the details",
+    "should_trigger": true
+  },
+  {
+    "query": "can you open up docs/deployment-flow.excalidraw.json and remove the staging environment box? we simplified the pipeline",
+    "should_trigger": true
+  },
+  {
+    "query": "someone drew an architecture diagram in excalidraw last sprint, it should be in the Docs folder — can you check what services are shown and whether Redis is included?",
+    "should_trigger": true
+  },
+  {
+    "query": "the labels in our excalidraw diagram are wrong — the file is at designs/current-state.excalidraw, can you rename 'OrderService' to 'CommerceService' and 'PaymentGateway' to 'BillingEngine'?",
+    "should_trigger": true
+  },
+  {
+    "query": "I need a new architecture diagram showing our microservices — API gateway, three backend services, and a shared database",
+    "should_trigger": false
+  },
+  {
+    "query": "can you create a flowchart for our CI/CD pipeline? it goes from PR to review to build to staging to prod",
+    "should_trigger": false
+  },
+  {
+    "query": "make me a mind map about the different approaches to caching we discussed",
+    "should_trigger": false
+  },
+  {
+    "query": "draw a system diagram showing how our frontend talks to the backend through the API gateway",
+    "should_trigger": false
+  },
+  {
+    "query": "I need an AWS architecture diagram with EC2, S3, Lambda, and RDS showing our cloud setup",
+    "should_trigger": false
+  },
+  {
+    "query": "create a sequence diagram showing the OAuth2 login flow between the browser, our server, and Google",
+    "should_trigger": false
+  },
+  {
+    "query": "can you visualize the database schema as an ER diagram? we have users, posts, comments, and likes tables",
+    "should_trigger": false
+  },
+  {
+    "query": "search my vault for notes about system architecture",
+    "should_trigger": false
+  },
+  {
+    "query": "can you look at the PNG diagram in docs/overview.png and describe what it shows?",
+    "should_trigger": false
+  },
+  {
+    "query": "generate a mermaid diagram showing our git branching strategy",
+    "should_trigger": false
+  }
+]

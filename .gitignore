@@ -1,0 +1,50 @@
+# Secrets and local auth
+auth.json
+cap_sid
+.sandbox-secrets/
+
+# Runtime state, caches, and temp
+.sandbox/
+.sandbox-bin/
+.tmp/
+tmp/
+cache/
+log/
+logs_2.sqlite
+logs_2.sqlite-shm
+logs_2.sqlite-wal
+state_5.sqlite
+state_5.sqlite-shm
+state_5.sqlite-wal
+models_cache.json
+sandbox.log
+sandbox_commands.rust.log
+sqlite/
+memories/
+sessions/
+archived_sessions/
+ambient-suggestions/
+history.jsonl
+session_index.jsonl
+installation_id
+.codex-global-state.json
+
+# Backups and generated files
+*.bak
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.zip
+*.tar.gz
+
+# Python and OS noise
+**/__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
+
+# Nested standalone repos and local indexes
+skills/caveman/
+vendor_imports/skills/
+skills/conversation-lookup/convo_index.db

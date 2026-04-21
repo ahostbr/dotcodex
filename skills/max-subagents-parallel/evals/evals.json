@@ -1,0 +1,82 @@
+[
+  {
+    "query": "max-subagents-parallel — decompose this task and run everything in parallel",
+    "should_trigger": true
+  },
+  {
+    "query": "activate maximum parallelism mode for this refactoring task",
+    "should_trigger": true
+  },
+  {
+    "query": "use recursive agent spawning to parallelize this across all modules",
+    "should_trigger": true
+  },
+  {
+    "query": "I want max parallel decomposition — break this into subtasks and spawn agents",
+    "should_trigger": true
+  },
+  {
+    "query": "run this with full parallel subagent mode, aggressive decomposition",
+    "should_trigger": true
+  },
+  {
+    "query": "go max parallel on this — decompose recursively and fire off subagents",
+    "should_trigger": true
+  },
+  {
+    "query": "parallelize this entire migration with max-subagents-parallel",
+    "should_trigger": true
+  },
+  {
+    "query": "task decomposition mode — break it down and run each piece with a subagent",
+    "should_trigger": true
+  },
+  {
+    "query": "use aggressive parallel decomposition to handle all these API endpoint changes",
+    "should_trigger": true
+  },
+  {
+    "query": "spin up parallel subagents for each subtask — max decomposition",
+    "should_trigger": true
+  },
+  {
+    "query": "swarm this task across a bunch of coding agents",
+    "should_trigger": false
+  },
+  {
+    "query": "how does parallel mode work? explain the flags",
+    "should_trigger": false
+  },
+  {
+    "query": "what strategies are available for parallel agent spawning?",
+    "should_trigger": false
+  },
+  {
+    "query": "spawn a swarm to refactor these files",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I configure model tiering for parallel agents?",
+    "should_trigger": false
+  },
+  {
+    "query": "just run this task normally, no need for parallelism",
+    "should_trigger": false
+  },
+  {
+    "query": "can you plan out the implementation steps for this feature?",
+    "should_trigger": false
+  },
+  {
+    "query": "explain recursive decomposition strategies to me",
+    "should_trigger": false
+  },
+  {
+    "query": "use k-spawnteam to create agents for this work",
+    "should_trigger": false
+  },
+  {
+    "query": "run the tests in parallel using jest --workers",
+    "should_trigger": false
+  }
+]

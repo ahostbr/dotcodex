@@ -1,0 +1,82 @@
+[
+  {
+    "query": "go to google.com and search for 'best pizza near me' and screenshot the results",
+    "should_trigger": true
+  },
+  {
+    "query": "I need you to fill out this web form at https://example.com/signup with my info",
+    "should_trigger": true
+  },
+  {
+    "query": "scrape all the product prices from this ecommerce page https://shop.example.com/deals",
+    "should_trigger": true
+  },
+  {
+    "query": "can you navigate to my bank's website and take a screenshot of the login page?",
+    "should_trigger": true
+  },
+  {
+    "query": "open the browser, go to hacker news, and grab the top 10 headlines for me",
+    "should_trigger": true
+  },
+  {
+    "query": "click the submit button on this page and wait for the confirmation message",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to automate logging into this internal tool every morning, can you set that up?",
+    "should_trigger": true
+  },
+  {
+    "query": "take a full-page screenshot of https://mysite.com and save it as a png",
+    "should_trigger": true
+  },
+  {
+    "query": "extract the table data from this webpage and put it in a csv",
+    "should_trigger": true
+  },
+  {
+    "query": "browse to this url, scroll down to the pricing section, and tell me what the enterprise plan costs",
+    "should_trigger": true
+  },
+  {
+    "query": "write me a Playwright test script that checks login flow with page.goto and expect assertions",
+    "should_trigger": false
+  },
+  {
+    "query": "set up an end-to-end test suite that covers all user journeys in our app",
+    "should_trigger": false
+  },
+  {
+    "query": "I need Playwright trace viewer to debug why my test is flaky",
+    "should_trigger": false
+  },
+  {
+    "query": "fetch the JSON from this API endpoint https://api.example.com/data",
+    "should_trigger": false
+  },
+  {
+    "query": "curl this URL and parse the response headers",
+    "should_trigger": false
+  },
+  {
+    "query": "create a comprehensive e2e test that validates checkout, payment, and order confirmation",
+    "should_trigger": false
+  },
+  {
+    "query": "help me mock network requests in my Playwright config for testing",
+    "should_trigger": false
+  },
+  {
+    "query": "write a selenium script in python to automate this workflow",
+    "should_trigger": false
+  },
+  {
+    "query": "can you read the contents of this webpage? just use a simple fetch",
+    "should_trigger": false
+  },
+  {
+    "query": "run my existing playwright test suite and show me the results",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,274 @@
+{
+  "id": "PkUNChpTxw0UE-Na-NIVz",
+  "status": "published",
+  "elements": [
+    {
+      "type": "rectangle",
+      "version": 155,
+      "versionNonce": 877792857,
+      "isDeleted": false,
+      "id": "WSTK37MlyohQex32k_wXm",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": -183.68253968253998,
+      "y": 822.0466753938886,
+      "strokeColor": "#4285f4",
+      "backgroundColor": "#FFF",
+      "width": 160,
+      "height": 72,
+      "seed": 458394711,
+      "groupIds": [
+        "HJEkh01pmhZaa5krXxJ5Z"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650238765596,
+      "link": null
+    },
+    {
+      "type": "text",
+      "version": 155,
+      "versionNonce": 2086625207,
+      "isDeleted": false,
+      "id": "po6rTem8",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": -118.68253968253998,
+      "y": 851.0466753938886,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 81,
+      "height": 14,
+      "seed": 1647069337,
+      "groupIds": [
+        "HJEkh01pmhZaa5krXxJ5Z"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650238765596,
+      "link": null,
+      "fontSize": 12,
+      "fontFamily": 2,
+      "text": "Persistent Disk",
+      "rawText": "Persistent Disk",
+      "baseline": 11,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Persistent Disk"
+    },
+    {
+      "type": "line",
+      "version": 155,
+      "versionNonce": 59824953,
+      "isDeleted": false,
+      "id": "V8j_CKVjKyTjKYyi6cjIG",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": -145.62253830924897,
+      "y": 860.2733427980634,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#4285f4",
+      "width": 21.120001316070557,
+      "height": 11.106666564941406,
+      "seed": 1544350071,
+      "groupIds": [
+        "hldlL5-gJpb6-hWXcSD86",
+        "HJEkh01pmhZaa5krXxJ5Z"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650238765596,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6.106666564941406
+        ],
+        [
+          -16.120001316070557,
+          6.106666564941406
+        ],
+        [
+          -16.120001316070557,
+          11.106666564941406
+        ],
+        [
+          5,
+          11.106666564941406
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 155,
+      "versionNonce": 1592283351,
+      "isDeleted": false,
+      "id": "l1iuOdh_UuUbhvVZ3WTlp",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": -156.74253914848236,
+      "y": 855.8200089433881,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#aecbfa",
+      "width": 21.120001316070557,
+      "height": 11.106666803359985,
+      "seed": 1722404217,
+      "groupIds": [
+        "HhzXA3h9bNsaBXoes9yrv",
+        "HJEkh01pmhZaa5krXxJ5Z"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650238765596,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -6.106666564941406
+        ],
+        [
+          16.1200008392334,
+          -6.106666564941406
+        ],
+        [
+          16.1200008392334,
+          -11.106666803359985
+        ],
+        [
+          -5.000000476837158,
+          -11.106666803359985
+        ],
+        [
+          -5.000000476837158,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 155,
+      "versionNonce": 522390553,
+      "isDeleted": false,
+      "id": "LlCOc976UOxDRkFAIkikq",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": -153.95587227836518,
+      "y": 852.4866759279462,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#669df6",
+      "width": 21.120001316070557,
+      "height": 11.120000839233398,
+      "seed": 197042839,
+      "groupIds": [
+        "2ljA23glqPT0dyDkwszKu",
+        "HJEkh01pmhZaa5krXxJ5Z"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650238765596,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6.120000839233398
+        ],
+        [
+          -7.786667346954346,
+          6.120000839233398
+        ],
+        [
+          -7.786667346954346,
+          11.120000839233398
+        ],
+        [
+          5.546667098999023,
+          11.120000839233398
+        ],
+        [
+          5.546667098999023,
+          5
+        ],
+        [
+          13.333333969116211,
+          5
+        ],
+        [
+          13.333333969116211,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "created": 1650246280425,
+  "name": "Persistent Disk"
+}

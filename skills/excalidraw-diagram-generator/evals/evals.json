@@ -1,0 +1,82 @@
+[
+  {
+    "query": "I need an AWS architecture diagram with EC2 instances, an S3 bucket, Lambda functions, and an RDS database — use the actual AWS icons if you can",
+    "should_trigger": true
+  },
+  {
+    "query": "create a cloud infrastructure diagram using GCP icons showing Compute Engine, Cloud Storage, BigQuery, and Cloud Functions",
+    "should_trigger": true
+  },
+  {
+    "query": "can you make an architecture diagram with proper AWS icons? we've got an internet gateway, VPC, ELB load balancer, two EC2 instances, and an RDS cluster",
+    "should_trigger": true
+  },
+  {
+    "query": "I want a diagram using the cloud service icon libraries — show our setup with API Gateway fronting Lambda functions that write to DynamoDB",
+    "should_trigger": true
+  },
+  {
+    "query": "make me an excalidraw diagram with real AWS icons, not just boxes — need to show our three-tier architecture with ALB, ECS Fargate, and Aurora",
+    "should_trigger": true
+  },
+  {
+    "query": "we need a professional-looking cloud architecture diagram with the actual service icons for a presentation — AWS setup with CloudFront, API Gateway, Lambda, and S3",
+    "should_trigger": true
+  },
+  {
+    "query": "generate an excalidraw file with Azure icons showing our setup — App Service, Cosmos DB, Azure Functions, and Blob Storage",
+    "should_trigger": true
+  },
+  {
+    "query": "I need a network diagram using cloud icons — show the VPC with public and private subnets, NAT gateway, internet gateway, and the EC2 instances in each subnet",
+    "should_trigger": true
+  },
+  {
+    "query": "create an infrastructure diagram with Kubernetes icons showing our pods, services, ingress controller, and the persistent volumes",
+    "should_trigger": true
+  },
+  {
+    "query": "build me an excalidraw diagram using the icon library — need AWS architecture showing Route53, CloudFront CDN, S3 static hosting, and the API backend with Lambda",
+    "should_trigger": true
+  },
+  {
+    "query": "draw a simple flowchart showing our user registration process — signup form, email verification, account creation, welcome email",
+    "should_trigger": false
+  },
+  {
+    "query": "can you create a mind map of our product feature categories? core features, nice-to-haves, future roadmap items",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a basic architecture diagram with boxes and arrows — frontend app connects to API which connects to database and cache",
+    "should_trigger": false
+  },
+  {
+    "query": "make a system diagram showing the data flow between our microservices — just boxes and arrows, nothing fancy",
+    "should_trigger": false
+  },
+  {
+    "query": "hey can you look at the excalidraw file in docs/infra.excalidraw and tell me what AWS services are shown?",
+    "should_trigger": false
+  },
+  {
+    "query": "update the existing diagram at docs/aws-arch.excalidraw.json to add a new Lambda function between API Gateway and DynamoDB",
+    "should_trigger": false
+  },
+  {
+    "query": "create a decision tree flowchart for our incident response process",
+    "should_trigger": false
+  },
+  {
+    "query": "visualize our team org chart as a diagram — CTO at top, then three team leads, then the individual contributors",
+    "should_trigger": false
+  },
+  {
+    "query": "can you draw an ER diagram for our database? users, orders, products, and reviews tables with their relationships",
+    "should_trigger": false
+  },
+  {
+    "query": "make a swimlane diagram showing the handoffs between frontend team, backend team, and QA during our release process",
+    "should_trigger": false
+  }
+]

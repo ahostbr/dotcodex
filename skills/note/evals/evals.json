@@ -1,0 +1,82 @@
+[
+  {
+    "query": "create a note about the authentication architecture — we're using JWT with refresh tokens and a Redis-backed session store",
+    "should_trigger": true
+  },
+  {
+    "query": "/note LiteMemory — adding a section about the new RAG pipeline we implemented",
+    "should_trigger": true
+  },
+  {
+    "query": "save a research note about WebSocket scaling strategies — sticky sessions vs Redis pub/sub vs NATS",
+    "should_trigger": true
+  },
+  {
+    "query": "write a note called 'Database Migration Plan' with the steps for moving from MySQL to Postgres",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to save some notes on what I learned about Rust's ownership model — put it in Research",
+    "should_trigger": true
+  },
+  {
+    "query": "create a project note for the new billing service — overview, architecture, key decisions, and integration points",
+    "should_trigger": true
+  },
+  {
+    "query": "add to my notes on Kuroryuu — the MCP tool count is now at 25 tools with 135 actions",
+    "should_trigger": true
+  },
+  {
+    "query": "make an idea note about a possible browser extension that auto-captures highlights from web articles into the vault",
+    "should_trigger": true
+  },
+  {
+    "query": "save a note about the different caching strategies we evaluated — write-through, write-behind, cache-aside, and read-through",
+    "should_trigger": true
+  },
+  {
+    "query": "create a note about today's architecture review meeting — we decided to split the monolith into four services",
+    "should_trigger": true
+  },
+  {
+    "query": "add to today's daily that I finished the migration scripts",
+    "should_trigger": false
+  },
+  {
+    "query": "search my vault for notes about caching strategies",
+    "should_trigger": false
+  },
+  {
+    "query": "find all notes tagged with 'architecture'",
+    "should_trigger": false
+  },
+  {
+    "query": "import the PDF from C:/Downloads/whitepaper.pdf into my vault",
+    "should_trigger": false
+  },
+  {
+    "query": "journal entry for today: had a great debugging session, found the race condition",
+    "should_trigger": false
+  },
+  {
+    "query": "how does my vault structure work? what folders should I use for what?",
+    "should_trigger": false
+  },
+  {
+    "query": "what notes do I already have about Kubernetes?",
+    "should_trigger": false
+  },
+  {
+    "query": "log this for today — decided to go with the event-driven approach",
+    "should_trigger": false
+  },
+  {
+    "query": "show me today's daily note",
+    "should_trigger": false
+  },
+  {
+    "query": "bring the markdown file from docs/adr-001.md into my obsidian vault",
+    "should_trigger": false
+  }
+]

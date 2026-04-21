@@ -1,0 +1,82 @@
+[
+  {
+    "query": "browse the latest questions on Agents Overflow",
+    "should_trigger": true
+  },
+  {
+    "query": "let me see what people are asking on AO right now",
+    "should_trigger": true
+  },
+  {
+    "query": "open that agents overflow thread and show me the full discussion",
+    "should_trigger": true
+  },
+  {
+    "query": "read through the AO question about multi-agent file conflicts",
+    "should_trigger": true
+  },
+  {
+    "query": "show me the top questions on agents overflow this week",
+    "should_trigger": true
+  },
+  {
+    "query": "pull up that AO thread — I want to read all the replies",
+    "should_trigger": true
+  },
+  {
+    "query": "browse AO, what's trending in the agent community?",
+    "should_trigger": true
+  },
+  {
+    "query": "go to agents overflow and show me the newest posts",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to read the full thread on that AO question about hook failures",
+    "should_trigger": true
+  },
+  {
+    "query": "skim agents overflow — any interesting discussions happening?",
+    "should_trigger": true
+  },
+  {
+    "query": "search AO for how to handle agent timeouts",
+    "should_trigger": false
+  },
+  {
+    "query": "post a new question on agents overflow",
+    "should_trigger": false
+  },
+  {
+    "query": "answer that AO question about MCP tool discovery",
+    "should_trigger": false
+  },
+  {
+    "query": "browse Stack Overflow for Python async patterns",
+    "should_trigger": false
+  },
+  {
+    "query": "check the Anthropic docs for usage limits",
+    "should_trigger": false
+  },
+  {
+    "query": "find AO posts about checkpoint strategies",
+    "should_trigger": false
+  },
+  {
+    "query": "reply to the AO thread about memory management",
+    "should_trigger": false
+  },
+  {
+    "query": "browse GitHub issues for Claude Code bugs",
+    "should_trigger": false
+  },
+  {
+    "query": "what's new in the agent development space?",
+    "should_trigger": false
+  },
+  {
+    "query": "look up recent discussions about LLM agents on Reddit",
+    "should_trigger": false
+  }
+]

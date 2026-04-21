@@ -1,0 +1,82 @@
+[
+  {
+    "query": "how does parallel mode work? what flags do I use?",
+    "should_trigger": true
+  },
+  {
+    "query": "explain the max-subagents-parallel strategies to me",
+    "should_trigger": true
+  },
+  {
+    "query": "what's the difference between the parallel strategies — recursive vs flat?",
+    "should_trigger": true
+  },
+  {
+    "query": "how do I configure model tiering for parallel agents?",
+    "should_trigger": true
+  },
+  {
+    "query": "show me the help docs for max-subagents-parallel",
+    "should_trigger": true
+  },
+  {
+    "query": "what flags can I pass to parallel mode?",
+    "should_trigger": true
+  },
+  {
+    "query": "I don't understand the parallel decomposition settings, walk me through them",
+    "should_trigger": true
+  },
+  {
+    "query": "how do I set the concurrency limit for parallel subagents?",
+    "should_trigger": true
+  },
+  {
+    "query": "what model tier should I use for leaf tasks in parallel mode?",
+    "should_trigger": true
+  },
+  {
+    "query": "explain how the recursive agent spawning strategy works",
+    "should_trigger": true
+  },
+  {
+    "query": "run max-subagents-parallel on this task — decompose and execute",
+    "should_trigger": false
+  },
+  {
+    "query": "spawn a swarm of agents to handle these files",
+    "should_trigger": false
+  },
+  {
+    "query": "parallelize this refactoring across 8 subagents",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I use Claude Code in general?",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the best way to run tests in parallel?",
+    "should_trigger": false
+  },
+  {
+    "query": "decompose this task and run it with max parallelism now",
+    "should_trigger": false
+  },
+  {
+    "query": "help me understand how MCP tools work",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the difference between agents and subagents?",
+    "should_trigger": false
+  },
+  {
+    "query": "swarm this task across multiple agents",
+    "should_trigger": false
+  },
+  {
+    "query": "can you explain how the Agent tool works in Claude Code?",
+    "should_trigger": false
+  }
+]

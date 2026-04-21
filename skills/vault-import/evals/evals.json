@@ -1,0 +1,82 @@
+[
+  {
+    "query": "import the file at C:/Downloads/meeting-notes-march.md into my vault",
+    "should_trigger": true
+  },
+  {
+    "query": "/vault-import docs/adr-003-event-sourcing.md — put it in Research",
+    "should_trigger": true
+  },
+  {
+    "query": "bring the markdown document from E:/Projects/old-project/architecture.md into my obsidian notes",
+    "should_trigger": true
+  },
+  {
+    "query": "can you add this PDF from my Downloads folder into the vault? it's a whitepaper on distributed systems",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a transcript file at /tmp/interview-notes.md that I want to import into my vault under Research",
+    "should_trigger": true
+  },
+  {
+    "query": "take the file at Docs/Plans/migration-plan.md and import it into my obsidian vault",
+    "should_trigger": true
+  },
+  {
+    "query": "import this external document into my notes — it's at C:/Users/Ryan/Desktop/tech-review.md",
+    "should_trigger": true
+  },
+  {
+    "query": "add the changelog from our repo into my vault — it's at CHANGELOG.md in the project root",
+    "should_trigger": true
+  },
+  {
+    "query": "I've got some notes in a text file on my desktop, can you pull them into the vault? file is brainstorm-session.md",
+    "should_trigger": true
+  },
+  {
+    "query": "/vault-import C:/Users/Ryan/Documents/research-paper.md --to Research/Distributed-Systems",
+    "should_trigger": true
+  },
+  {
+    "query": "create a note about distributed systems — cover CAP theorem, eventual consistency, and partition tolerance",
+    "should_trigger": false
+  },
+  {
+    "query": "search my vault for any imported documents about architecture",
+    "should_trigger": false
+  },
+  {
+    "query": "add to today's daily note that I imported the design docs",
+    "should_trigger": false
+  },
+  {
+    "query": "write a research note summarizing what I learned from the conference talks",
+    "should_trigger": false
+  },
+  {
+    "query": "what notes do I have in the Research folder?",
+    "should_trigger": false
+  },
+  {
+    "query": "how does the vault-import command work? what options does it support?",
+    "should_trigger": false
+  },
+  {
+    "query": "read the file at docs/architecture.md and explain what it says",
+    "should_trigger": false
+  },
+  {
+    "query": "save a note called 'Meeting Summary' with the key decisions from today",
+    "should_trigger": false
+  },
+  {
+    "query": "find all notes tagged with 'imported'",
+    "should_trigger": false
+  },
+  {
+    "query": "copy the text from this webpage into a new vault note",
+    "should_trigger": false
+  }
+]

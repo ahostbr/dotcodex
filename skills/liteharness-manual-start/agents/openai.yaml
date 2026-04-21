@@ -1,0 +1,4 @@
+interface:
+  display_name: "LiteHarness Start"
+  short_description: "Manually bootstrap LiteHarness on Codex/Windows"
+  default_prompt: "Start LiteHarness manually for this session, then manage inbox checks, watch mode, discovery, or sending with the bundled script."

@@ -1,0 +1,131 @@
+model = "gpt-5.4"
+model_reasoning_effort = "high"
+personality = "pragmatic"
+plan_mode_reasoning_effort = "xhigh"
+approvals_reviewer = "user"
+notify = ["python", "C:\\Users\\Ryan\\.codex\\skills\\liteharness\\scripts\\liteharness_notify.py"]
+
+[features]
+shell_snapshot = true
+unified_exec = true
+
+[mcp_servers]
+[mcp_servers.kuroryuu]
+url = 'http://127.0.0.1:8100/mcp'
+
+[notice]
+hide_rate_limit_model_nudge = true
+[notice.model_migrations]
+'gpt-5.1-codex-mini' = 'gpt-5.2-codex'
+'gpt-5.2' = 'gpt-5.2-codex'
+"gpt-5.3-codex" = "gpt-5.4"
+
+[projects]
+[projects.'C:\Users\Ryan']
+trust_level = 'untrusted'
+
+[projects.'C:\Users\Ryan\Desktop']
+trust_level = 'untrusted'
+
+[projects.'\\?\E:\SAS\FreeRDP']
+trust_level = 'trusted'
+
+[projects.'\\?\E:\SAS\Kuroryuu']
+trust_level = 'trusted'
+
+[projects.'\\?\E:\SAS\ShadowsAndShurikens']
+trust_level = 'trusted'
+
+[projects.'\\?\E:\SAS\cline']
+trust_level = 'trusted'
+
+[projects.'\\?\E:\SAS\codex']
+trust_level = 'trusted'
+
+[projects.'\\?\E:\SAS\CLONE\Kuroryuu-master']
+trust_level = "trusted"
+
+[projects.'C:\Projects\YT_Transcribe']
+trust_level = "trusted"
+
+[projects.'\\?\E:\Terminal_OS']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\LiteTerminal']
+trust_level = "trusted"
+
+[projects.'C:\Users\Ryan\.vscode\extensions\anthropic.claude-code-2.1.49-win32-x64\resources\native-binary']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\LiteSpeak']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\LiteUsage']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\mcp-0ne']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\LiteEditor']
+trust_level = "trusted"
+
+[projects.'C:\Projects\LiteSwap']
+trust_level = "trusted"
+
+[projects.'C:\Projects\LiteDash']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\LiteImage']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\private\The-Nexus-Prismatica']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\LiteBench']
+trust_level = "trusted"
+
+[projects.'C:\Projects']
+trust_level = "trusted"
+
+[projects.'\\?\E:\SAS\REPO_CLONES\t3code']
+trust_level = "trusted"
+
+[projects.'C:\Projects\New folder']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\gui-workspace-template']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Projects\LiteWinTerminal']
+trust_level = "trusted"
+
+[projects.'\\?\E:\SAS\REPO_CLONES\FreeRDP']
+trust_level = "trusted"
+
+[projects.'\\?\E:\SAS\REPO_CLONES\t3code-latest']
+trust_level = "trusted"
+
+[projects.'E:\SAS\REPO_CLONES\claw-code-main']
+trust_level = "trusted"
+
+[projects.'E:\SAS\REPO_CLONES\ClaudeCode\src']
+trust_level = "trusted"
+
+[projects.'C:\Projects\LiteCode']
+trust_level = "trusted"
+
+[projects.'C:\Projects\LiteSuite']
+trust_level = "trusted"
+
+[projects.'C:\Projects\LiteDock']
+trust_level = "trusted"
+
+[projects.'C:\Projects\LiteModeler']
+trust_level = "trusted"
+
+[tui]
+status_line = ["model-with-reasoning", "context-remaining", "context-used", "five-hour-limit", "model-name", "weekly-limit", "context-window-size", "used-tokens", "total-input-tokens", "total-output-tokens"]
+theme = "1337"
+
+[windows]
+sandbox = "unelevated"

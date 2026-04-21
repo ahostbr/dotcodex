@@ -1,0 +1,22 @@
+[
+  {"query": "show me the architecture", "should_trigger": true},
+  {"query": "arch", "should_trigger": true},
+  {"query": "where is the IPC handler for launching apps?", "should_trigger": true},
+  {"query": "how does the installer work", "should_trigger": true},
+  {"query": "what module handles license checking", "should_trigger": true},
+  {"query": "show architecture index", "should_trigger": true},
+  {"query": "how is litesuite.dev structured", "should_trigger": true},
+  {"query": "where does the MCP config get written", "should_trigger": true},
+  {"query": "what's the install flow sequence", "should_trigger": true},
+  {"query": "explain the LiteAISuite codebase layout", "should_trigger": true},
+  {"query": "build the landing page for litesuite.dev", "should_trigger": false},
+  {"query": "fix the bug in the download page", "should_trigger": false},
+  {"query": "add a new feature to the installer", "should_trigger": false},
+  {"query": "review this React code for anti-patterns", "should_trigger": false},
+  {"query": "create an image for the marketing site", "should_trigger": false},
+  {"query": "help me plan the next sprint", "should_trigger": false},
+  {"query": "commit these changes", "should_trigger": false},
+  {"query": "run the tests", "should_trigger": false},
+  {"query": "search my vault for LiteAISuite notes", "should_trigger": false},
+  {"query": "consult the polymaths on this design", "should_trigger": false}
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "search skills.sh for a skill that handles database migrations",
+    "should_trigger": true
+  },
+  {
+    "query": "is there anything on skills.sh for setting up Tailwind CSS in a monorepo?",
+    "should_trigger": true
+  },
+  {
+    "query": "check the skills.sh ecosystem for Docker compose patterns",
+    "should_trigger": true
+  },
+  {
+    "query": "I need a procedural skill for Kubernetes deployment — look on skills.sh",
+    "should_trigger": true
+  },
+  {
+    "query": "find me a skills.sh recipe for setting up ESLint with TypeScript",
+    "should_trigger": true
+  },
+  {
+    "query": "does skills.sh have anything for GraphQL schema stitching?",
+    "should_trigger": true
+  },
+  {
+    "query": "look up skills.sh for a Prisma migration workflow skill",
+    "should_trigger": true
+  },
+  {
+    "query": "search the skill registry for anything related to CI/CD pipelines",
+    "should_trigger": true
+  },
+  {
+    "query": "are there any community skills on skills.sh for Playwright testing?",
+    "should_trigger": true
+  },
+  {
+    "query": "find procedural knowledge on skills.sh about FastAPI project scaffolding",
+    "should_trigger": true
+  },
+  {
+    "query": "what skills do I currently have installed?",
+    "should_trigger": false
+  },
+  {
+    "query": "find me a skill for running parallel agents",
+    "should_trigger": false
+  },
+  {
+    "query": "google how to set up Tailwind CSS",
+    "should_trigger": false
+  },
+  {
+    "query": "search the web for Docker best practices",
+    "should_trigger": false
+  },
+  {
+    "query": "show me the documentation for pnpm workspaces",
+    "should_trigger": false
+  },
+  {
+    "query": "list all available commands in this project",
+    "should_trigger": false
+  },
+  {
+    "query": "help me write a Dockerfile for this Node.js app",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the best way to handle environment variables?",
+    "should_trigger": false
+  },
+  {
+    "query": "find the skill that does TTS in our project",
+    "should_trigger": false
+  },
+  {
+    "query": "look up the npm registry for a package that handles CSV parsing",
+    "should_trigger": false
+  }
+]

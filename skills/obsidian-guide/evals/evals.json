@@ -1,0 +1,82 @@
+[
+  {
+    "query": "how does my vault work? what are the different folders for?",
+    "should_trigger": true
+  },
+  {
+    "query": "what's the structure of my obsidian vault? I forgot where research notes go",
+    "should_trigger": true
+  },
+  {
+    "query": "can you explain the vault commands? like what's the difference between /note and /daily?",
+    "should_trigger": true
+  },
+  {
+    "query": "what frontmatter fields should I use when creating notes? is there a standard template?",
+    "should_trigger": true
+  },
+  {
+    "query": "vault help — I'm not sure how the linking and tagging conventions work in my notes",
+    "should_trigger": true
+  },
+  {
+    "query": "how should I organize a new project in my vault? where do architecture decisions go vs research vs daily logs?",
+    "should_trigger": true
+  },
+  {
+    "query": "what templates are available in my obsidian vault?",
+    "should_trigger": true
+  },
+  {
+    "query": "remind me what the Sessions folder is for — is that auto-generated or do I create those manually?",
+    "should_trigger": true
+  },
+  {
+    "query": "what's the difference between Chronicles and Projects in my vault? when would I use each?",
+    "should_trigger": true
+  },
+  {
+    "query": "how do I use wikilinks in my vault? and should I be using tags or folders for categorization?",
+    "should_trigger": true
+  },
+  {
+    "query": "create a note about the new feature we're building",
+    "should_trigger": false
+  },
+  {
+    "query": "search my vault for notes about authentication",
+    "should_trigger": false
+  },
+  {
+    "query": "add to today's daily note that I started the migration",
+    "should_trigger": false
+  },
+  {
+    "query": "import the architecture doc from Downloads into my vault",
+    "should_trigger": false
+  },
+  {
+    "query": "find notes tagged with 'kubernetes'",
+    "should_trigger": false
+  },
+  {
+    "query": "/daily reviewed PRs and fixed the flaky test",
+    "should_trigger": false
+  },
+  {
+    "query": "write a research note about GraphQL vs REST tradeoffs",
+    "should_trigger": false
+  },
+  {
+    "query": "what notes do I have about the billing service?",
+    "should_trigger": false
+  },
+  {
+    "query": "log that I finished the API migration today",
+    "should_trigger": false
+  },
+  {
+    "query": "save this markdown file into my vault under Research",
+    "should_trigger": false
+  }
+]

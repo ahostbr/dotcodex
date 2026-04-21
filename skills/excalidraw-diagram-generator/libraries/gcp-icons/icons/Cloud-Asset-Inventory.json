@@ -1,0 +1,275 @@
+{
+  "id": "zAcOJuxZtzAR0hszG9IP7",
+  "status": "published",
+  "elements": [
+    {
+      "type": "rectangle",
+      "version": 92,
+      "versionNonce": 375531127,
+      "isDeleted": false,
+      "id": "2cYfigh7gv_fSwEk4uPqv",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 173.2451943613263,
+      "y": 737.5551224571036,
+      "strokeColor": "#4285f4",
+      "backgroundColor": "#FFF",
+      "width": 160,
+      "height": 72,
+      "seed": 237290103,
+      "groupIds": [
+        "0h1FzRsx91KpfcoQaK3HQ"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650067485024,
+      "link": null
+    },
+    {
+      "type": "text",
+      "version": 92,
+      "versionNonce": 353558649,
+      "isDeleted": false,
+      "id": "c5rDHTYF",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 238.2451943613263,
+      "y": 759.5551224571036,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 64,
+      "height": 28,
+      "seed": 1700267129,
+      "groupIds": [
+        "0h1FzRsx91KpfcoQaK3HQ"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650067485024,
+      "link": null,
+      "fontSize": 12,
+      "fontFamily": 2,
+      "text": "Cloud Asset\nInventory",
+      "rawText": "Cloud Asset\nInventory",
+      "baseline": 25,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Cloud Asset\nInventory"
+    },
+    {
+      "type": "line",
+      "version": 92,
+      "versionNonce": 576995223,
+      "isDeleted": false,
+      "id": "l0zkSJszg8g6MHPKpzVN5",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 208.71516315710267,
+      "y": 761.1333971839713,
+      "strokeColor": "transparent",
+      "backgroundColor": "#4285f4",
+      "width": 24.60830593109131,
+      "height": 24.60830783843994,
+      "seed": 1064524695,
+      "groupIds": [
+        "0h1FzRsx91KpfcoQaK3HQ"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650067485024,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -1.4926528930664062,
+          1.4875397682189941
+        ],
+        [
+          9.349519729614258,
+          12.304153442382812
+        ],
+        [
+          0,
+          21.653674125671387
+        ],
+        [
+          -9.34952163696289,
+          12.304153442382812
+        ],
+        [
+          -4.88690185546875,
+          7.836421966552734
+        ],
+        [
+          -6.35910701751709,
+          6.359105110168457
+        ],
+        [
+          -12.304154396057129,
+          12.304153442382812
+        ],
+        [
+          0,
+          24.60830783843994
+        ],
+        [
+          12.30415153503418,
+          12.304153442382812
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 92,
+      "versionNonce": 1420978521,
+      "isDeleted": false,
+      "id": "HTT42ZYA4m0JOd2pg6O81",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 205.6685170389386,
+      "y": 776.1417046409415,
+      "strokeColor": "transparent",
+      "backgroundColor": "#4285f4",
+      "width": 5.408306121826172,
+      "height": 5.408308029174805,
+      "seed": 682823001,
+      "groupIds": [
+        "0h1FzRsx91KpfcoQaK3HQ"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650067485024,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -2.704153060913086,
+          -2.7041540145874023
+        ],
+        [
+          0,
+          -5.408308029174805
+        ],
+        [
+          2.704153060913086,
+          -2.7041540145874023
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 92,
+      "versionNonce": 1426470071,
+      "isDeleted": false,
+      "id": "suIDBgjpzHDVH1gAiTXmK",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 202.49407570135315,
+      "y": 761.1333971839713,
+      "strokeColor": "transparent",
+      "backgroundColor": "#4285f4",
+      "width": 24.60319373011589,
+      "height": 24.60830783843994,
+      "seed": 970051767,
+      "groupIds": [
+        "0h1FzRsx91KpfcoQaK3HQ"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650067485024,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -12.304152935743332,
+          12.304153442382812
+        ],
+        [
+          0,
+          24.60830783843994
+        ],
+        [
+          1.4722051620483398,
+          23.130990028381348
+        ],
+        [
+          -9.349520444869995,
+          12.304153442382812
+        ],
+        [
+          0,
+          2.9546327590942383
+        ],
+        [
+          9.349520683288574,
+          12.304153442382812
+        ],
+        [
+          4.881789207458496,
+          16.771885871887207
+        ],
+        [
+          6.359105110168457,
+          18.244088172912598
+        ],
+        [
+          12.299040794372559,
+          12.304153442382812
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "created": 1650246721096,
+  "name": "Cloud Asset Inventory"
+}

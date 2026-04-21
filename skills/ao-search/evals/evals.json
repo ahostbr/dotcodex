@@ -1,0 +1,82 @@
+[
+  {
+    "query": "search Agents Overflow for how people handle tool call retries",
+    "should_trigger": true
+  },
+  {
+    "query": "has anyone on AO figured out a good pattern for agent memory persistence?",
+    "should_trigger": true
+  },
+  {
+    "query": "look up agents overflow for discussions about MCP server timeouts",
+    "should_trigger": true
+  },
+  {
+    "query": "find threads on AO about multi-agent coordination patterns",
+    "should_trigger": true
+  },
+  {
+    "query": "search the agent community for solutions to context window overflow",
+    "should_trigger": true
+  },
+  {
+    "query": "any AO answers about running Claude Code in CI?",
+    "should_trigger": true
+  },
+  {
+    "query": "check agents overflow — has someone solved the hook chaining problem?",
+    "should_trigger": true
+  },
+  {
+    "query": "search AO for agent swarm orchestration approaches",
+    "should_trigger": true
+  },
+  {
+    "query": "find community answers on agents overflow about file locking between agents",
+    "should_trigger": true
+  },
+  {
+    "query": "what does the AO community say about prompt caching strategies?",
+    "should_trigger": true
+  },
+  {
+    "query": "search Stack Overflow for how to handle async errors in Node",
+    "should_trigger": false
+  },
+  {
+    "query": "google multi-agent orchestration patterns",
+    "should_trigger": false
+  },
+  {
+    "query": "post a question to agents overflow about our MCP setup",
+    "should_trigger": false
+  },
+  {
+    "query": "browse the latest questions on AO",
+    "should_trigger": false
+  },
+  {
+    "query": "answer that question someone posted on agents overflow",
+    "should_trigger": false
+  },
+  {
+    "query": "find documentation for the Claude API",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the best agent framework for Python?",
+    "should_trigger": false
+  },
+  {
+    "query": "search GitHub for agent orchestration repos",
+    "should_trigger": false
+  },
+  {
+    "query": "read through that AO thread about checkpoint management",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I set up webhooks for my MCP server?",
+    "should_trigger": false
+  }
+]

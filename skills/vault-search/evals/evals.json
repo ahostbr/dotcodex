@@ -1,0 +1,82 @@
+[
+  {
+    "query": "search my vault for notes about authentication and OAuth patterns",
+    "should_trigger": true
+  },
+  {
+    "query": "what notes do I have about Kubernetes? I know I wrote something about cluster setup last month",
+    "should_trigger": true
+  },
+  {
+    "query": "/vault-search WebSocket scaling — I wrote some research notes on this a while back",
+    "should_trigger": true
+  },
+  {
+    "query": "find all notes tagged with 'architecture' in my vault",
+    "should_trigger": true
+  },
+  {
+    "query": "look up anything I have on database migration strategies — I think there were a couple notes",
+    "should_trigger": true
+  },
+  {
+    "query": "do I have any notes that link to the Kuroryuu project note? show me what references it",
+    "should_trigger": true
+  },
+  {
+    "query": "search for notes in the Research folder about caching — I need to review what I learned before making a decision",
+    "should_trigger": true
+  },
+  {
+    "query": "what do I have on React performance optimization? I'm sure I saved some notes from that blog post",
+    "should_trigger": true
+  },
+  {
+    "query": "find my notes about the billing service incident from last month",
+    "should_trigger": true
+  },
+  {
+    "query": "can you search the vault for anything related to 'event sourcing' or 'CQRS'? I want to pull up my research before the design meeting",
+    "should_trigger": true
+  },
+  {
+    "query": "create a note about what I learned about Redis cluster mode",
+    "should_trigger": false
+  },
+  {
+    "query": "add to today's daily note that I reviewed the auth documentation",
+    "should_trigger": false
+  },
+  {
+    "query": "import the markdown file from C:/Downloads/tech-talk-notes.md into my vault",
+    "should_trigger": false
+  },
+  {
+    "query": "how does my vault structure work? what folders exist?",
+    "should_trigger": false
+  },
+  {
+    "query": "write a research note about the pros and cons of monorepos",
+    "should_trigger": false
+  },
+  {
+    "query": "/daily shipped the search feature and fixed the pagination bug",
+    "should_trigger": false
+  },
+  {
+    "query": "save a note called 'API Design Principles' with the guidelines we agreed on",
+    "should_trigger": false
+  },
+  {
+    "query": "journal entry: spent the day debugging memory leaks in the worker process",
+    "should_trigger": false
+  },
+  {
+    "query": "bring the architecture doc from the old repo into my obsidian vault",
+    "should_trigger": false
+  },
+  {
+    "query": "what templates are available in my vault?",
+    "should_trigger": false
+  }
+]

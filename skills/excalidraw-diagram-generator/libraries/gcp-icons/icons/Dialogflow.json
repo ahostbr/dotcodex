@@ -1,0 +1,237 @@
+{
+  "id": "mVBQhmUGY4Wb9_UpyetJd",
+  "status": "published",
+  "elements": [
+    {
+      "type": "rectangle",
+      "version": 140,
+      "versionNonce": 1160583927,
+      "isDeleted": false,
+      "id": "18U9Sm8BAap6qRNbv6DJH",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 261.9747023809524,
+      "y": 799.0196188268624,
+      "strokeColor": "#4285f4",
+      "backgroundColor": "#FFF",
+      "width": 160,
+      "height": 72,
+      "seed": 1453528727,
+      "groupIds": [
+        "VFFrp_E5ESS_3i0MJf04B"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650232562957,
+      "link": null
+    },
+    {
+      "type": "text",
+      "version": 128,
+      "versionNonce": 1140814841,
+      "isDeleted": false,
+      "id": "4SMEL4Dk",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 326.9747023809524,
+      "y": 828.0196188268624,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 56,
+      "height": 14,
+      "seed": 699433561,
+      "groupIds": [
+        "VFFrp_E5ESS_3i0MJf04B"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650232562957,
+      "link": null,
+      "fontSize": 12,
+      "fontFamily": 2,
+      "text": "Dialogflow",
+      "rawText": "Dialogflow",
+      "baseline": 11,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Dialogflow"
+    },
+    {
+      "type": "line",
+      "version": 140,
+      "versionNonce": 350004247,
+      "isDeleted": false,
+      "id": "Rik5F15qr0EmDfDyBP31u",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 294.4747023809524,
+      "y": 835.0196188268624,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#4285f4",
+      "width": 21.33333444595337,
+      "height": 18.46011447906494,
+      "seed": 1766992823,
+      "groupIds": [
+        "sBrPK_fITjqzYnpxOIzXg",
+        "VFFrp_E5ESS_3i0MJf04B"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650232562957,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -10.666666507720947,
+          -5.3333330154418945
+        ],
+        [
+          -10.666666507720947,
+          3.6800003051757812
+        ],
+        [
+          -10.666666507720947,
+          3.6800003051757812
+        ],
+        [
+          -10.41333293914795,
+          4.200000762939453
+        ],
+        [
+          -4.226666450500488,
+          7.866666793823242
+        ],
+        [
+          -4.226666450500488,
+          7.866666793823242
+        ],
+        [
+          -4,
+          8.253334045410156
+        ],
+        [
+          -4,
+          12.933334350585938
+        ],
+        [
+          -4,
+          12.933334350585938
+        ],
+        [
+          -3.8818626403808594,
+          13.126781463623047
+        ],
+        [
+          -3.6552658081054688,
+          13.121192932128906
+        ],
+        [
+          -3.6533327102661133,
+          13.120000839233398
+        ],
+        [
+          10.360000610351562,
+          4.200000762939453
+        ],
+        [
+          10.360000610351562,
+          4.200000762939453
+        ],
+        [
+          10.666667938232422,
+          3.6399993896484375
+        ],
+        [
+          10.666667938232422,
+          -5.3333330154418945
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 140,
+      "versionNonce": 801148121,
+      "isDeleted": false,
+      "id": "hrr-UjIoFyhWUnk_YSubt",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 294.4747023809524,
+      "y": 832.3529527959786,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#669df6",
+      "width": 21.33333444595337,
+      "height": 10.58666729927063,
+      "seed": 755027769,
+      "groupIds": [
+        "i4THQUf5M5iThWcpwugQN",
+        "VFFrp_E5ESS_3i0MJf04B"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650232562957,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          10.666667938232422,
+          -5.333333969116211
+        ],
+        [
+          0.15999984741210938,
+          -10.58666729927063
+        ],
+        [
+          0.15999984741210938,
+          -10.58666729927063
+        ],
+        [
+          -0.15999984741210938,
+          -10.58666729927063
+        ],
+        [
+          -10.666666507720947,
+          -5.333333969116211
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "created": 1650246402314,
+  "name": "Dialogflow"
+}

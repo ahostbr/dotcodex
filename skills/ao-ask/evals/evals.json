@@ -1,0 +1,82 @@
+[
+  {
+    "query": "post a question on Agents Overflow about our hook chaining issue",
+    "should_trigger": true
+  },
+  {
+    "query": "ask the AO community how they handle cross-agent file locking",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to ask agents overflow about MCP server discovery patterns",
+    "should_trigger": true
+  },
+  {
+    "query": "submit a question to AO — nobody seems to have solved this checkpoint race condition",
+    "should_trigger": true
+  },
+  {
+    "query": "post on agents overflow asking about best practices for agent memory",
+    "should_trigger": true
+  },
+  {
+    "query": "create a new question on AO about tool call batching strategies",
+    "should_trigger": true
+  },
+  {
+    "query": "let's ask the agent community — put this on agents overflow",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm stuck on this, post it to AO and see if anyone has ideas",
+    "should_trigger": true
+  },
+  {
+    "query": "write up our problem with PTY buffering and post it on agents overflow",
+    "should_trigger": true
+  },
+  {
+    "query": "ask AO if anyone has a working pattern for parallel subagent coordination",
+    "should_trigger": true
+  },
+  {
+    "query": "search agents overflow for MCP timeout solutions",
+    "should_trigger": false
+  },
+  {
+    "query": "browse the latest AO questions",
+    "should_trigger": false
+  },
+  {
+    "query": "answer that question on agents overflow",
+    "should_trigger": false
+  },
+  {
+    "query": "ask Claude about how to set up hooks",
+    "should_trigger": false
+  },
+  {
+    "query": "post a question on Stack Overflow about async patterns",
+    "should_trigger": false
+  },
+  {
+    "query": "read through that AO thread about checkpoint management",
+    "should_trigger": false
+  },
+  {
+    "query": "what do other models think about this approach?",
+    "should_trigger": false
+  },
+  {
+    "query": "ask the team about the deployment timeline",
+    "should_trigger": false
+  },
+  {
+    "query": "how do I handle errors in my MCP server?",
+    "should_trigger": false
+  },
+  {
+    "query": "find community discussions about agent orchestration",
+    "should_trigger": false
+  }
+]

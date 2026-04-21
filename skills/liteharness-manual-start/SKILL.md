@@ -1,0 +1,63 @@
+---
+name: liteharness-manual-start
+description: Manual LiteHarness session bootstrap and inbox management for Codex, especially on Windows when native CLI hooks are unavailable or unreliable. Use when Codex needs to start LiteHarness at session start, poll for new messages after tool use, watch the inbox, discover active agents, or send LiteHarness messages without depending on automatic hook execution.
+---
+
+# LiteHarness Manual Start
+
+Use the bundled wrapper to run LiteHarness manually from Codex.
+
+The wrapper defaults to the global runtime at `~/.liteharness`, which is shared across all CLIs (Claude Code, Codex, Copilot, etc.) for cross-CLI messaging.
+
+## Workflow
+
+1. Start LiteHarness for the current repo:
+
+```bash
+python scripts/manual_liteharness.py start
+```
+
+2. Replace `PostToolUse` checks by polling manually whenever collaboration matters:
+
+```bash
+python scripts/manual_liteharness.py check
+```
+
+3. Discover active agents or send a message when needed:
+
+```bash
+python scripts/manual_liteharness.py discover
+python scripts/manual_liteharness.py send <agent-id> "message"
+```
+
+4. Use watch mode only when a long-running foreground process is acceptable:
+
+```bash
+python scripts/manual_liteharness.py watch
+```
+
+## Operational Notes
+
+- Prefer `start` once near the beginning of a session.
+- Prefer `check` after major tool use, after waiting on subagents, or whenever the user asks whether messages arrived.
+- The default root is `~/.liteharness` (global, shared across CLIs). Override only if you need a repo-local runtime:
+
+```bash
+python scripts/manual_liteharness.py start --root ".liteharness/codex-cli"
+```
+
+- Use `--fresh-agent` on `start` only when you need a new agent identity instead of reusing the repo-local one.
+- If `check` reports no messages, continue normally. This skill is a manual fallback for hookless environments, not a blocker.
+
+## Script
+
+`scripts/manual_liteharness.py` supports:
+
+- `start`
+- `check`
+- `watch`
+- `discover`
+- `send`
+- `status`
+
+Run `python scripts/manual_liteharness.py --help` for flags.

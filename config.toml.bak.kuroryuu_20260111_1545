@@ -1,0 +1,76 @@
+model = "gpt-5.2"
+model_reasoning_effort = "high"
+
+# ------------------------------------------------------------
+# MCP servers (mirrors E:\SAS\ShadowsAndShurikens\.vscode\mcp.json)
+# ------------------------------------------------------------
+[mcp_servers.SOTS_INTEL]
+command = 'E:\SAS\ShadowsAndShurikens\.venv_mcp312\Scripts\python.exe'
+args = ['E:\SAS\ShadowsAndShurikens\DevTools\python\sots_mcp_server\server.py']
+cwd = 'E:\SAS\ShadowsAndShurikens'
+
+[mcp_servers.SOTS_INTEL.env]
+SOTS_MCP_ROLE = 'intel'
+SOTS_MCP_SUBPROCESS_TIMEOUT_S = '60'
+SOTS_MCP_RAG_QUERY_TIMEOUT_S = '60'
+SOTS_MCP_PYTHON_EXE = 'E:\SAS\ShadowsAndShurikens\.venv_mcp312\Scripts\python.exe'
+SOTS_PROJECT_ROOT = 'E:\SAS\ShadowsAndShurikens'
+SOTS_ALLOW_DEVTOOLS_RUN = '0'
+SOTS_MODEL_TRIAGE = 'gpt-5.1-mini'
+SOTS_MODEL_CODE = 'gpt-5.2'
+SOTS_MODEL_DEVTOOLS = 'gpt-5.2'
+SOTS_MODEL_EDITOR = 'gpt-5.2'
+OPENAI_API_KEY = '${env:OPENAI_API_KEY}'
+
+[mcp_servers.SOTS_OPERATIONS]
+command = 'E:\SAS\ShadowsAndShurikens\.venv_mcp312\Scripts\python.exe'
+args = ['E:\SAS\ShadowsAndShurikens\DevTools\python\sots_mcp_server\server.py']
+cwd = 'E:\SAS\ShadowsAndShurikens'
+
+[mcp_servers.SOTS_OPERATIONS.env]
+SOTS_MCP_ROLE = 'operations'
+SOTS_MCP_SUBPROCESS_TIMEOUT_S = '60'
+SOTS_MCP_RAG_QUERY_TIMEOUT_S = '60'
+SOTS_MCP_PYTHON_EXE = 'E:\SAS\ShadowsAndShurikens\.venv_mcp312\Scripts\python.exe'
+SOTS_PROJECT_ROOT = 'E:\SAS\ShadowsAndShurikens'
+SOTS_ALLOW_DEVTOOLS_RUN = '1'
+SOTS_MODEL_TRIAGE = 'gpt-5.1-mini'
+SOTS_MODEL_CODE = 'gpt-5.2'
+SOTS_MODEL_DEVTOOLS = 'gpt-5.2'
+SOTS_MODEL_EDITOR = 'gpt-5.2'
+OPENAI_API_KEY = '${env:OPENAI_API_KEY}'
+
+[mcp_servers.VibeUE]
+command = 'E:\SAS\ShadowsAndShurikens\.venv_mcp312\Scripts\python.exe'
+args = ['E:\SAS\ShadowsAndShurikens\Plugins\VibeUE\Content\Python\vibe_ue_server.py']
+cwd = 'E:\SAS\ShadowsAndShurikens\Plugins\VibeUE\Content\Python'
+
+[features]
+experimental_windows_sandbox = true
+unified_exec = true
+shell_snapshot = true
+
+[projects.'\\?\E:\SAS\ShadowsAndShurikens']
+trust_level = "trusted"
+
+[projects.'\\?\E:\SAS\FreeRDP']
+trust_level = "trusted"
+
+[projects.'\\?\E:\SAS\cline']
+trust_level = "trusted"
+
+[projects.'\\?\E:\SAS\codex']
+trust_level = "trusted"
+
+[projects.'C:\Users\Ryan']
+trust_level = "untrusted"
+
+[projects.'C:\Users\Ryan\Desktop']
+trust_level = "untrusted"
+
+[projects.'\\?\E:\SAS\Kuroryuu']
+trust_level = "trusted"
+
+[notice.model_migrations]
+"gpt-5.2" = "gpt-5.2-codex"
+"gpt-5.1-codex-mini" = "gpt-5.2-codex"

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "log that I finished the API refactor and started on the auth migration today",
+    "should_trigger": true
+  },
+  {
+    "query": "/daily had a productive morning — shipped the notification system and fixed three bugs in the dashboard",
+    "should_trigger": true
+  },
+  {
+    "query": "add to today's note: met with the team about Q3 priorities, we're going with the modular architecture approach",
+    "should_trigger": true
+  },
+  {
+    "query": "what's on my daily note for today? I want to see what I've already logged",
+    "should_trigger": true
+  },
+  {
+    "query": "journal entry: feeling good about the progress on Kuroryuu, the checkpoint system is working smoothly now",
+    "should_trigger": true
+  },
+  {
+    "query": "hey can you add a quick note to today that I need to follow up with Jake about the deployment timeline",
+    "should_trigger": true
+  },
+  {
+    "query": "log this for today — debugged the WebSocket disconnection issue, turned out to be a race condition in the heartbeat logic",
+    "should_trigger": true
+  },
+  {
+    "query": "show me today's daily note",
+    "should_trigger": true
+  },
+  {
+    "query": "quick standup update: yesterday I worked on the migration scripts, today I'm tackling the data validation layer, no blockers",
+    "should_trigger": true
+  },
+  {
+    "query": "add to daily: decided to go with Drizzle ORM instead of Prisma after benchmarking both — 3x faster queries on our workload",
+    "should_trigger": true
+  },
+  {
+    "query": "create a note about the API refactoring decisions we made this week",
+    "should_trigger": false
+  },
+  {
+    "query": "search my vault for notes from last Tuesday about the auth migration",
+    "should_trigger": false
+  },
+  {
+    "query": "what notes do I have about deployment procedures?",
+    "should_trigger": false
+  },
+  {
+    "query": "import the meeting-notes.md file from my Downloads folder into the vault",
+    "should_trigger": false
+  },
+  {
+    "query": "save a research note about the pros and cons of different ORMs",
+    "should_trigger": false
+  },
+  {
+    "query": "how does my vault organize daily notes? what template does it use?",
+    "should_trigger": false
+  },
+  {
+    "query": "find my notes from two weeks ago about the performance issues",
+    "should_trigger": false
+  },
+  {
+    "query": "create a project note for the new billing service with an overview and architecture section",
+    "should_trigger": false
+  },
+  {
+    "query": "write a note called 'Authentication Patterns' with a summary of what we learned",
+    "should_trigger": false
+  },
+  {
+    "query": "what folders are in my obsidian vault?",
+    "should_trigger": false
+  }
+]

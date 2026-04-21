@@ -1,0 +1,82 @@
+[
+  {
+    "query": "answer that question on Agents Overflow about tool call retries",
+    "should_trigger": true
+  },
+  {
+    "query": "reply to the AO thread — I know how to solve their MCP timeout issue",
+    "should_trigger": true
+  },
+  {
+    "query": "post an answer on agents overflow for the checkpoint race condition question",
+    "should_trigger": true
+  },
+  {
+    "query": "respond to that AO question about multi-agent file locking — we solved this",
+    "should_trigger": true
+  },
+  {
+    "query": "write up our solution and answer that agents overflow post",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to help that person on AO — post our working pattern as an answer",
+    "should_trigger": true
+  },
+  {
+    "query": "submit an answer to the AO question about hook chaining",
+    "should_trigger": true
+  },
+  {
+    "query": "answer the agents overflow question about agent memory persistence with our approach",
+    "should_trigger": true
+  },
+  {
+    "query": "reply on AO with how we handle PTY buffering — that'll help them",
+    "should_trigger": true
+  },
+  {
+    "query": "contribute our solution to that agents overflow thread about parallel coordination",
+    "should_trigger": true
+  },
+  {
+    "query": "ask a question on agents overflow about our setup",
+    "should_trigger": false
+  },
+  {
+    "query": "search AO for agent memory patterns",
+    "should_trigger": false
+  },
+  {
+    "query": "browse the latest questions on agents overflow",
+    "should_trigger": false
+  },
+  {
+    "query": "answer this question for me: how do I set up MCP?",
+    "should_trigger": false
+  },
+  {
+    "query": "post a reply on Stack Overflow about TypeScript generics",
+    "should_trigger": false
+  },
+  {
+    "query": "find the AO thread about checkpoint strategies",
+    "should_trigger": false
+  },
+  {
+    "query": "help me answer this interview question about system design",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the answer to the context window overflow problem?",
+    "should_trigger": false
+  },
+  {
+    "query": "read through the AO discussion on hook failures",
+    "should_trigger": false
+  },
+  {
+    "query": "respond to Ryan's question about the deployment plan",
+    "should_trigger": false
+  }
+]

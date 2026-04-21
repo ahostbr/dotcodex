@@ -1,0 +1,82 @@
+[
+  {
+    "query": "can you create a flowchart for our deployment pipeline? PR gets created, code review happens, CI runs, staging deploy, QA sign-off, then prod deploy",
+    "should_trigger": true
+  },
+  {
+    "query": "I need an architecture diagram showing how our frontend, API gateway, three microservices, and PostgreSQL database all connect",
+    "should_trigger": true
+  },
+  {
+    "query": "draw me a mind map breaking down our authentication system — OAuth, SAML, API keys, session tokens, and the flows for each",
+    "should_trigger": true
+  },
+  {
+    "query": "make a system diagram for the new feature — user uploads a file, it goes to the processing queue, worker picks it up, transforms it, stores result in S3, notifies user",
+    "should_trigger": true
+  },
+  {
+    "query": "visualize our microservices architecture as an excalidraw diagram — show the API gateway, auth service, user service, order service, notification service, and the message queue between them",
+    "should_trigger": true
+  },
+  {
+    "query": "create a decision tree diagram for our error handling — if 4xx show user error, if 5xx retry twice then alert, if timeout show retry button",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to diagram the data flow through our ETL pipeline — source databases, extraction, staging area, transformations, data warehouse, BI dashboards",
+    "should_trigger": true
+  },
+  {
+    "query": "can you make a simple diagram showing the three layers of our app? presentation layer with React, business logic layer with Express, and data layer with Postgres and Redis",
+    "should_trigger": true
+  },
+  {
+    "query": "draw a sequence-style diagram showing how a payment goes through our system — user initiates, frontend validates, API processes, Stripe charges, webhook confirms, email sends",
+    "should_trigger": true
+  },
+  {
+    "query": "create a swimlane diagram showing responsibilities during an incident — on-call engineer triages, team lead communicates, SRE investigates infra, dev pushes fix",
+    "should_trigger": true
+  },
+  {
+    "query": "can you read the excalidraw file at docs/architecture.excalidraw and tell me what components are in there?",
+    "should_trigger": false
+  },
+  {
+    "query": "update the existing diagram at Docs/Plans/system.excalidraw.json to add a caching layer between the API and database",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a cloud architecture diagram with actual AWS icons — EC2, S3, Lambda, RDS — not just plain boxes",
+    "should_trigger": false
+  },
+  {
+    "query": "compare the two excalidraw files in docs/ and tell me which architecture approach has fewer single points of failure",
+    "should_trigger": false
+  },
+  {
+    "query": "make an AWS diagram using the proper icon library with VPC, subnets, security groups, and the EC2 instances",
+    "should_trigger": false
+  },
+  {
+    "query": "generate a mermaid diagram showing our class hierarchy",
+    "should_trigger": false
+  },
+  {
+    "query": "create a note about our system architecture decisions",
+    "should_trigger": false
+  },
+  {
+    "query": "search my vault for any architecture diagrams or design docs",
+    "should_trigger": false
+  },
+  {
+    "query": "the excalidraw diagram at infra/topology.excalidraw has the wrong service names — can you fix them?",
+    "should_trigger": false
+  },
+  {
+    "query": "can you create a GCP architecture diagram with the real Google Cloud icons for Compute Engine, Cloud SQL, and Cloud Run?",
+    "should_trigger": false
+  }
+]

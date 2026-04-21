@@ -1,0 +1,347 @@
+{
+  "id": "rc0UIAwIoTxFIvggfg3ng",
+  "status": "published",
+  "elements": [
+    {
+      "type": "rectangle",
+      "version": 59,
+      "versionNonce": 780466455,
+      "isDeleted": false,
+      "id": "rYsGIeUWu5K64LwhCbrrb",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 327.4997811624646,
+      "y": 244.18258762069848,
+      "strokeColor": "#4285f4",
+      "backgroundColor": "#FFF",
+      "width": 160,
+      "height": 72,
+      "seed": 1738259609,
+      "groupIds": [
+        "cKDux-jnHNcXIRheId85V"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650229218261,
+      "link": null
+    },
+    {
+      "type": "text",
+      "version": 59,
+      "versionNonce": 590612441,
+      "isDeleted": false,
+      "id": "B8sFQs2w",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 392.4997811624646,
+      "y": 273.1825876206985,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 72,
+      "height": 14,
+      "seed": 1048491383,
+      "groupIds": [
+        "cKDux-jnHNcXIRheId85V"
+      ],
+      "strokeSharpness": "round",
+      "boundElements": [],
+      "updated": 1650229218261,
+      "link": null,
+      "fontSize": 12,
+      "fontFamily": 2,
+      "text": "Cloud Router",
+      "rawText": "Cloud Router",
+      "baseline": 11,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Cloud Router"
+    },
+    {
+      "type": "line",
+      "version": 59,
+      "versionNonce": 1607712311,
+      "isDeleted": false,
+      "id": "qGamJRlEvWUwpivxFuUel",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 370.366722614491,
+      "y": 283.3720083207717,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#4285f4",
+      "width": 11.488265991210938,
+      "height": 14.365618705749512,
+      "seed": 1980416377,
+      "groupIds": [
+        "Y3UGb4chEf8ehINtoxNjf",
+        "cKDux-jnHNcXIRheId85V"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650229218261,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4.31074333190918
+        ],
+        [
+          -7.177520751953125,
+          -2.8720645904541016
+        ],
+        [
+          0.005290985107421875,
+          -10.054875373840332
+        ],
+        [
+          0.005290985107421875,
+          -5.749420166015625
+        ],
+        [
+          4.3107452392578125,
+          -5.749420166015625
+        ],
+        [
+          4.3107452392578125,
+          -0.00528717041015625
+        ],
+        [
+          0,
+          -0.00528717041015625
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 59,
+      "versionNonce": 116892857,
+      "isDeleted": false,
+      "id": "CI_Y5LFo2T-GI4qRK_wQH",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 350.26226046773195,
+      "y": 277.6278762788406,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#4285f4",
+      "width": 11.488263845443726,
+      "height": 14.360329627990723,
+      "seed": 1444343447,
+      "groupIds": [
+        "Y3UGb4chEf8ehINtoxNjf",
+        "cKDux-jnHNcXIRheId85V"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650229218261,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -4.30545449256897,
+          0
+        ],
+        [
+          -4.30545449256897,
+          5.744132041931152
+        ],
+        [
+          0,
+          5.744132041931152
+        ],
+        [
+          0,
+          10.054875373840332
+        ],
+        [
+          7.182809352874756,
+          2.872067451477051
+        ],
+        [
+          0,
+          -4.305454254150391
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 59,
+      "versionNonce": 1095556951,
+      "isDeleted": false,
+      "id": "4l3RztDudgSuRZFe78GGp",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 363.18920186253786,
+      "y": 287.67746448227075,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#4285f4",
+      "width": 14.360329627990723,
+      "height": 11.493553161621094,
+      "seed": 1845897817,
+      "groupIds": [
+        "Y3UGb4chEf8ehINtoxNjf",
+        "cKDux-jnHNcXIRheId85V"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650229218261,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -4.31074333190918
+        ],
+        [
+          -5.744132041931152,
+          -4.31074333190918
+        ],
+        [
+          -5.744132041931152,
+          0
+        ],
+        [
+          -10.049586296081543,
+          0
+        ],
+        [
+          -2.8720645904541016,
+          7.182809829711914
+        ],
+        [
+          4.31074333190918,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 59,
+      "versionNonce": 1844749721,
+      "isDeleted": false,
+      "id": "f6WPewJnmd22vIoMXmSzi",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "angle": 0,
+      "x": 363.18920186253786,
+      "y": 273.3224220246902,
+      "strokeColor": "#00000000",
+      "backgroundColor": "#4285f4",
+      "width": 14.360329627990723,
+      "height": 11.488263845443726,
+      "seed": 2089485239,
+      "groupIds": [
+        "Y3UGb4chEf8ehINtoxNjf",
+        "cKDux-jnHNcXIRheId85V"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElements": [],
+      "updated": 1650229218261,
+      "link": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4.305454254150391
+        ],
+        [
+          -5.744132041931152,
+          4.305454254150391
+        ],
+        [
+          -5.744132041931152,
+          0
+        ],
+        [
+          -10.049586296081543,
+          0
+        ],
+        [
+          -2.8720645904541016,
+          -7.182809591293335
+        ],
+        [
+          4.31074333190918,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "created": 1650246574412,
+  "name": "Cloud Router"
+}
