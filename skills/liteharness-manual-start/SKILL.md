@@ -46,7 +46,9 @@ python scripts/manual_liteharness.py watch
 python scripts/manual_liteharness.py start --root ".liteharness/codex-cli"
 ```
 
-- Use `--fresh-agent` on `start` only when you need a new agent identity instead of reusing the repo-local one.
+- `start` reuses the saved agent ID for the current Codex thread or Windows Terminal session by default, using `CODEX_THREAD_ID`/`WT_SESSION` to persist per-session state.
+- This stable identity is required so other agents can reply after compaction, watcher restarts, or repeated manual bootstrap calls.
+- Use `--fresh-agent` only when you intentionally want to rotate to a new identity inside the same session.
 - If `check` reports no messages, continue normally. This skill is a manual fallback for hookless environments, not a blocker.
 
 ## Script

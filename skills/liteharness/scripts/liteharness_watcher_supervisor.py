@@ -13,32 +13,61 @@ from pathlib import Path
 
 
 STATE_ROOT = Path.home() / ".codex" / "memories" / "liteharness"
-SUPERVISOR_PID_PATH = STATE_ROOT / "codex_inbox_supervisor.pid"
-SUPERVISOR_HEARTBEAT_PATH = STATE_ROOT / "codex_inbox_supervisor.heartbeat.json"
-LOG_PATH = STATE_ROOT / "codex_inbox_watcher.log"
+HARNESS_ROOT = Path.home() / ".liteharness"
+AGENT_CONFIG_PATH = HARNESS_ROOT / "codex_agent.json"
 WATCHER_PATH = Path(__file__).with_name("liteharness_inbox_watcher.py")
 RESTART_DELAY_SEC = 2.0
+PROCESS_AGENT_ID: str | None = None
+
+
+def agent_slug(agent_id: str) -> str:
+    return "".join(ch if ch.isalnum() or ch in ("-", "_") else "_" for ch in agent_id)
+
+
+def valid_agent_id(value: object) -> str | None:
+    if not isinstance(value, str):
+        return None
+    agent_id = value.strip()
+    return agent_id if agent_id else None
+
+
+def state_path(agent_id: str | None, suffix: str) -> Path:
+    slug = agent_slug(agent_id or "unknown")
+    return STATE_ROOT / f"codex_inbox_{slug}_{suffix}"
+
+
+def supervisor_pid_path() -> Path:
+    return state_path(current_agent_id(), "supervisor.pid")
+
+
+def supervisor_heartbeat_path() -> Path:
+    return state_path(current_agent_id(), "supervisor.heartbeat.json")
+
+
+def log_path() -> Path:
+    return state_path(current_agent_id(), "watcher.log")
 
 
 def append_log(message: str) -> None:
     STATE_ROOT.mkdir(parents=True, exist_ok=True)
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-    with LOG_PATH.open("a", encoding="utf-8") as handle:
+    with log_path().open("a", encoding="utf-8") as handle:
         handle.write(f"[{timestamp}] {message}\n")
 
 
 def write_pid_file() -> None:
     STATE_ROOT.mkdir(parents=True, exist_ok=True)
     payload = {"pid": os.getpid(), "started_at": time.time()}
-    SUPERVISOR_PID_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    supervisor_pid_path().write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 def remove_pid_file() -> None:
     try:
-        if SUPERVISOR_PID_PATH.exists():
-            data = json.loads(SUPERVISOR_PID_PATH.read_text(encoding="utf-8"))
+        path = supervisor_pid_path()
+        if path.exists():
+            data = json.loads(path.read_text(encoding="utf-8"))
             if data.get("pid") == os.getpid():
-                SUPERVISOR_PID_PATH.unlink()
+                path.unlink()
     except (OSError, json.JSONDecodeError):
         pass
 
@@ -47,11 +76,12 @@ def write_heartbeat(*, watcher_pid: int | None = None, last_error: str | None = 
     STATE_ROOT.mkdir(parents=True, exist_ok=True)
     payload = {
         "pid": os.getpid(),
+        "agent_id": current_agent_id(),
         "updated_at": time.time(),
         "watcher_pid": watcher_pid,
         "last_error": last_error,
     }
-    SUPERVISOR_HEARTBEAT_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    supervisor_heartbeat_path().write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 def watcher_launcher() -> str:
@@ -63,6 +93,26 @@ def watcher_launcher() -> str:
     return sys.executable
 
 
+def resolve_agent_id() -> str | None:
+    env_agent_id = valid_agent_id(os.environ.get("LITEHARNESS_AGENT_ID"))
+    if env_agent_id:
+        return env_agent_id
+    if not AGENT_CONFIG_PATH.exists():
+        return None
+    try:
+        data = json.loads(AGENT_CONFIG_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return valid_agent_id(data.get("agent_id"))
+
+
+def current_agent_id() -> str | None:
+    global PROCESS_AGENT_ID
+    if PROCESS_AGENT_ID is None:
+        PROCESS_AGENT_ID = resolve_agent_id()
+    return PROCESS_AGENT_ID
+
+
 def launch_watcher() -> subprocess.Popen[bytes]:
     creationflags = 0
     for name in ("CREATE_NEW_PROCESS_GROUP", "DETACHED_PROCESS", "CREATE_NO_WINDOW"):
@@ -70,8 +120,13 @@ def launch_watcher() -> subprocess.Popen[bytes]:
 
     launcher = watcher_launcher()
     append_log(f"starting watcher via {launcher}")
+    env = os.environ.copy()
+    agent_id = current_agent_id()
+    if agent_id:
+        env["LITEHARNESS_AGENT_ID"] = agent_id
     return subprocess.Popen(
         [launcher, str(WATCHER_PATH)],
+        env=env,
         stdin=subprocess.DEVNULL,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,

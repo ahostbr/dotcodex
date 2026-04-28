@@ -1,13 +1,15 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "high"
 personality = "pragmatic"
 plan_mode_reasoning_effort = "xhigh"
 approvals_reviewer = "user"
 notify = ["python", "C:\\Users\\Ryan\\.codex\\skills\\liteharness\\scripts\\liteharness_notify.py"]
+check_for_update_on_startup = false
 
 [features]
 shell_snapshot = true
 unified_exec = true
+memories = true
 
 [mcp_servers]
 [mcp_servers.kuroryuu]
@@ -15,6 +17,7 @@ url = 'http://127.0.0.1:8100/mcp'
 
 [notice]
 hide_rate_limit_model_nudge = true
+hide_full_access_warning = true
 [notice.model_migrations]
 'gpt-5.1-codex-mini' = 'gpt-5.2-codex'
 'gpt-5.2' = 'gpt-5.2-codex'
@@ -123,9 +126,46 @@ trust_level = "trusted"
 [projects.'C:\Projects\LiteModeler']
 trust_level = "trusted"
 
+[projects.'c:\projects\private\peekaboop']
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "context-remaining", "context-used", "five-hour-limit", "model-name", "weekly-limit", "context-window-size", "used-tokens", "total-input-tokens", "total-output-tokens"]
 theme = "1337"
 
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
 [windows]
-sandbox = "unelevated"
+sandbox = "elevated"
+
+[sandbox_workspace_write]
+writable_roots = [
+  'C:\Users\Ryan\.liteharness',
+  'C:\Users\Ryan\.codex\memories',
+]
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-28T11:00:09Z"
+source_type = "local"
+source = '\\?\C:\Users\Ryan\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-04-28T11:30:02Z"
+source_type = "local"
+source = '\\?\C:\Users\Ryan\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true

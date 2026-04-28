@@ -47,6 +47,8 @@ Spawn multiple polymathic thinking agents in parallel to analyze a task from dif
 | Agent | Lens |
 |-------|------|
 | **feynman** | Debugging, first principles, cargo cult detection — freshman test |
+| **holmes** | Debugging, incident investigation, forensic evidence, negative signals — case file first |
+| **moriarty** | Adversarial strategy, threat modeling, deception, hidden networks — move two |
 | **tao** | Problem decomposition, cross-domain connections — toy models first |
 | **munger** | Decision frameworks, bias detection — invert every problem |
 | **socrates** | Assumption testing, exposing hidden ignorance — elenctic questioning |
@@ -78,7 +80,8 @@ Based on the task domain, select the most relevant polymaths. Consider:
 - **Design patterns** → gamma, helm, johnson, vlissides
 - **Strategy/business** → bezos, thiel, gates, munger, suntzu
 - **UX/design** → jobs, rams, vangogh, disney
-- **Debugging** → feynman, carmack, linus, socrates
+- **Debugging** → holmes, feynman, moriarty, carmack, linus, socrates
+- **Threat modeling / adversarial review** → moriarty, holmes, munger, dijkstra, shannon
 - **Marketing** → ogilvy, godin, graham, mrbeast
 - **Decision-making** → munger, aurelius, bezos, socrates, feynman
 - **Innovation** → davinci, lovelace, thiel, musk, tao
