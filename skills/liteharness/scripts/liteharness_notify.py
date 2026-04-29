@@ -259,10 +259,39 @@ def capture_focused_target(agent_id: str) -> None:
 
 
 def capture_target_by_agent_buffer(agent_id: str) -> bool:
+    markers = agent_buffer_markers(agent_id)
     try:
-        target = terminal_automation.find_pane_by_buffer_markers(agent_buffer_markers(agent_id))
+        data = terminal_automation._run_ps_script(
+            "find_pane_by_buffer_markers.ps1",
+            args={"markers": markers, "sampleChars": 2_000_000},
+            timeout=8,
+        )
     except Exception:
         return False
+    candidates = data.get("candidates", []) if isinstance(data, dict) else []
+    if not isinstance(candidates, list):
+        candidates = []
+    presence = read_agent_presence(agent_id)
+    project_name = Path(str(presence.get("project") or "")).name.lower()
+    if project_name:
+        project_candidates = [
+            candidate for candidate in candidates
+            if project_name in str(candidate.get("window_title") or "").lower()
+        ]
+        if project_candidates:
+            candidates = project_candidates
+    target = None
+    if candidates:
+        target = sorted(
+            candidates,
+            key=lambda candidate: (
+                int(candidate.get("score") or 0),
+                1 if candidate.get("focused") else 0,
+            ),
+            reverse=True,
+        )[0]
+    elif isinstance(data, dict):
+        target = data.get("match")
     if not isinstance(target, dict):
         return False
     window_handle = target.get("window_handle")
