@@ -203,6 +203,59 @@ def stop_pid(pid: int | None) -> None:
         pass
 
 
+def legacy_hooks_watch_pids(agent_id: str) -> list[int]:
+    """Find old hook watch consumers that can steal inbox messages for this agent."""
+    if os.name != "nt" or not agent_id:
+        return []
+    script = r"""
+$ErrorActionPreference = 'SilentlyContinue'
+$agentId = [string]$env:LITEHARNESS_AGENT_ID
+$currentPid = [int]$env:LITEHARNESS_CURRENT_PID
+$rows = Get-CimInstance Win32_Process | Where-Object {
+  $_.ProcessId -ne $currentPid -and
+  $_.CommandLine -and
+  $_.CommandLine -match '(?i)(^|\s)-m\s+liteharness\.hooks(\s|$)' -and
+  $_.CommandLine -match '(?i)\bwatch\b' -and
+  $_.CommandLine -like '*--agent-id*' -and
+  $_.CommandLine -like "*$agentId*"
+} | Select-Object -ExpandProperty ProcessId
+$rows | ConvertTo-Json -Compress
+"""
+    env = os.environ.copy()
+    env["LITEHARNESS_AGENT_ID"] = agent_id
+    env["LITEHARNESS_CURRENT_PID"] = str(os.getpid())
+    try:
+        result = subprocess.run(
+            ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", script],
+            env=env,
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            timeout=8,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+            check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return []
+    if result.returncode != 0 or not result.stdout.strip():
+        return []
+    try:
+        raw = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return []
+    values = raw if isinstance(raw, list) else [raw]
+    return [pid for pid in values if isinstance(pid, int) and pid > 0 and pid != os.getpid()]
+
+
+def stop_legacy_hooks_watchers(agent_id: str) -> int:
+    stopped = 0
+    for pid in legacy_hooks_watch_pids(agent_id):
+        stop_pid(pid)
+        stopped += 1
+    return stopped
+
+
 def capture_focused_target(agent_id: str) -> None:
     if os.environ.get("LITESUITE_BRIDGE_TOKEN"):
         return
@@ -647,6 +700,7 @@ def main() -> int:
     previous_target_agent = target_agent_id(agent_id)
     force_restart = previous_target_agent is not None and previous_target_agent != agent_id
     sync_legacy_agent_config(agent_id)
+    stop_legacy_hooks_watchers(agent_id)
     ensure_watcher_running(agent_id, force_restart=force_restart)
     capture_focused_target(agent_id)
     refresh_existing_target_agent(agent_id)
