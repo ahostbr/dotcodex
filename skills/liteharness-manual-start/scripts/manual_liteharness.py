@@ -273,6 +273,7 @@ def refresh_codex_inbox_watcher(agent_id: str) -> None:
     """Retarget the standalone Codex inbox watcher after manual session rotation."""
     if not CODEX_NOTIFY_SCRIPT.exists():
         return
+    stop_legacy_hooks_watchers(agent_id)
     payload = json.dumps({"type": "agent-turn-complete", "turn-id": "manual-start-retarget"})
     env = os.environ.copy()
     env["LITEHARNESS_AGENT_ID"] = agent_id
@@ -294,6 +295,67 @@ def refresh_codex_inbox_watcher(agent_id: str) -> None:
         )
     except OSError:
         return
+
+
+def legacy_hooks_watch_pids(agent_id: str) -> list[int]:
+    """Find old hook watch consumers that can steal inbox messages for this agent."""
+    if os.name != "nt" or not agent_id:
+        return []
+    script = r"""
+$ErrorActionPreference = 'SilentlyContinue'
+$agentId = [string]$env:LITEHARNESS_AGENT_ID
+$currentPid = [int]$env:LITEHARNESS_CURRENT_PID
+$rows = Get-CimInstance Win32_Process | Where-Object {
+  $_.ProcessId -ne $currentPid -and
+  $_.CommandLine -and
+  $_.CommandLine -match '(?i)(^|\s)-m\s+liteharness\.hooks(\s|$)' -and
+  $_.CommandLine -match '(?i)\bwatch\b' -and
+  $_.CommandLine -like '*--agent-id*' -and
+  $_.CommandLine -like "*$agentId*"
+} | Select-Object -ExpandProperty ProcessId
+$rows | ConvertTo-Json -Compress
+"""
+    env = os.environ.copy()
+    env["LITEHARNESS_AGENT_ID"] = agent_id
+    env["LITEHARNESS_CURRENT_PID"] = str(os.getpid())
+    try:
+        result = subprocess.run(
+            ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", script],
+            env=env,
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            timeout=8,
+            check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return []
+    if result.returncode != 0 or not result.stdout.strip():
+        return []
+    try:
+        raw = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return []
+    values = raw if isinstance(raw, list) else [raw]
+    return [pid for pid in values if isinstance(pid, int) and pid > 0 and pid != os.getpid()]
+
+
+def stop_legacy_hooks_watchers(agent_id: str) -> int:
+    stopped = 0
+    for pid in legacy_hooks_watch_pids(agent_id):
+        try:
+            subprocess.run(
+                ["taskkill", "/PID", str(pid), "/T", "/F"],
+                stdin=subprocess.DEVNULL,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                check=False,
+            )
+        except OSError:
+            continue
+        stopped += 1
+    return stopped
 
 
 def agent_slug(agent_id: str) -> str:
