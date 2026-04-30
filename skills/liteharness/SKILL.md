@@ -9,13 +9,14 @@ Spawn, name, message, and programmatically control Claude Code CLI sessions. Two
 
 ## Session Startup (MANDATORY)
 
-Every agent MUST do these on activation:
+Every agent MUST register on activation. Choose the inbox monitor path for the current surface:
 
-1. **Start inbox monitor:**
+1. **Claude Code / terminal agents: start the Monitor inbox watcher:**
    ```
    Monitor({ description: "LiteHarness inbox", persistent: true, timeout_ms: 3600000, command: "python -m liteharness.hooks watch --agent-id <YOUR-AGENT-ID>" })
    ```
-2. **Register with correct info:**
+2. **Codex Desktop sessions: do not start `python -m liteharness.hooks watch` for the same agent ID.** Use `manual_liteharness.py start --check-now`, then `manual_liteharness.py check` and `manual_liteharness.py codex-monitor status/logs` as needed. The legacy `hooks watch` path prints to stdout and renames messages to `done/`, so it can steal messages before the Codex Desktop auto-injector fires.
+3. **Register with correct info:**
    ```bash
    python -m liteharness.cli register --agent-id <YOUR-AGENT-ID> --cli claude-code --model <your-model>
    ```

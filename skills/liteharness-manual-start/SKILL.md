@@ -30,7 +30,7 @@ python scripts/manual_liteharness.py discover
 python scripts/manual_liteharness.py send <agent-id> "message"
 ```
 
-4. Use watch mode only when a long-running foreground process is acceptable:
+4. Use watch mode only when a long-running foreground process is acceptable. In Codex Desktop, prefer `codex-monitor` plus manual `check`; foreground watch mode can claim messages and prevent desktop auto-injection.
 
 ```bash
 python scripts/manual_liteharness.py watch
