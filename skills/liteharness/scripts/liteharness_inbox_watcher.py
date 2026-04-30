@@ -227,7 +227,7 @@ def load_target() -> dict | None:
     presence = read_agent_presence(current_agent_id)
     presence_wt_session = presence.get("wt_session")
     mode = data.get("mode")
-    if (presence.get("surface") == "terminal" or presence_wt_session) and mode == "codex-desktop":
+    if presence.get("surface") == "terminal" and mode == "codex-desktop":
         clear_target("refusing Codex Desktop target for terminal Codex agent")
         return None
     target_wt_session = data.get("wt_session")

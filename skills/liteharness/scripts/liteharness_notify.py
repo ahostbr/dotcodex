@@ -261,7 +261,11 @@ def capture_focused_target(agent_id: str) -> None:
         return
     presence = read_agent_presence(agent_id)
     presence_wt_session = presence.get("wt_session")
-    is_terminal_agent = presence.get("surface") == "terminal" or bool(presence_wt_session)
+    surface = presence.get("surface")
+    is_terminal_agent = surface == "terminal"
+    if surface == "desktop":
+        capture_codex_desktop_target(agent_id)
+        return
     if is_terminal_agent:
         if presence_wt_session and not os.environ.get("WT_SESSION"):
             os.environ["WT_SESSION"] = str(presence_wt_session)
@@ -607,9 +611,17 @@ def refresh_existing_target_agent(agent_id: str) -> None:
         return
     presence = read_agent_presence(agent_id)
     presence_wt_session = presence.get("wt_session")
-    if (presence.get("surface") == "terminal" or presence_wt_session) and data.get("mode") == "codex-desktop":
+    if presence.get("surface") == "terminal" and data.get("mode") == "codex-desktop":
         try:
             path.unlink()
+        except OSError:
+            pass
+        return
+    if data.get("mode") == "codex-desktop":
+        data["agent_id"] = agent_id
+        data["target_refreshed_at"] = time.time()
+        try:
+            path.write_text(json.dumps(data, indent=2), encoding="utf-8")
         except OSError:
             pass
         return
