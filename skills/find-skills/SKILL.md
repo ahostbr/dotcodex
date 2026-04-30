@@ -108,6 +108,12 @@ Browse and fetch skills directly from the skills.sh website (37K+ skills).
 Check the local cache first before fetching from the network:
 
 ```
+.copilot/plugins/kuro/skills/_skills-sh-data/
+```
+
+If that cache does not exist in Copilot yet, fall back to:
+
+```
 .claude/plugins/kuro/skills/_skills-sh-data/
 ```
 
