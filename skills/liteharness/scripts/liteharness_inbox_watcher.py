@@ -615,6 +615,9 @@ def main() -> int:
         try:
             time.sleep(POLL_INTERVAL_SEC)
             seen_ids = run_once(seen_ids=seen_ids, echo=False)
+        except KeyboardInterrupt:
+            append_log("watcher stopped by KeyboardInterrupt")
+            return 0
         except Exception as exc:
             append_log(f"watch loop failed: {exc!r}")
             write_heartbeat(last_error=repr(exc))

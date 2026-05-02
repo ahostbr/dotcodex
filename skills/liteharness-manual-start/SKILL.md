@@ -50,6 +50,7 @@ python scripts/manual_liteharness.py start --root ".liteharness/codex-cli"
 - This stable identity is required so other agents can reply after compaction, watcher restarts, or repeated manual bootstrap calls.
 - Use `--fresh-agent` only when you intentionally want to rotate to a new identity inside the same session.
 - If `check` reports no messages, continue normally. This skill is a manual fallback for hookless environments, not a blocker.
+- Codex monitor implementation changes must be tested by running `liteharness_watcher_supervisor.py` directly with `LITEHARNESS_AGENT_ID` set and confirming attached watcher stdout streams live before committing.
 
 ## Script
 

@@ -81,6 +81,8 @@ Correct targeting flow for Codex/WT delivery:
 
 Use `codex-monitor status` and the per-agent watcher log to verify delivery. A correct headed delivery log names the exact WT pane, for example `injected message ... into 133230:0`; it must not say Codex Desktop when the recipient is a terminal agent.
 
+The Codex monitor supervisor now uses an attached child-process model for `liteharness_inbox_watcher.py`: no `pythonw`, `DETACHED_PROCESS`, or hidden watcher process group. When testing watcher implementation changes, run `liteharness_watcher_supervisor.py` directly with `LITEHARNESS_AGENT_ID` set and confirm stdout streams live from the attached watcher before committing.
+
 ## Spawning Agents
 
 Spawn new Claude Code sessions. **Default is always headless PTY mode** — only use headed/terminal mode if Ryan explicitly asks for a visible terminal.

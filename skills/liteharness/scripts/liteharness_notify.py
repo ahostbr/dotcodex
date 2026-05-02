@@ -668,28 +668,16 @@ def ensure_watcher_running(agent_id: str, *, force_restart: bool = False) -> Non
                 break
             time.sleep(0.25)
 
-    launcher = sys.executable
-    python_exe = Path(sys.executable)
-    if python_exe.name.lower() == "python.exe":
-        pythonw = python_exe.with_name("pythonw.exe")
-        if pythonw.exists():
-            launcher = str(pythonw)
-
-    creationflags = 0
-    for name in ("CREATE_NEW_PROCESS_GROUP", "DETACHED_PROCESS", "CREATE_NO_WINDOW"):
-        creationflags |= getattr(subprocess, name, 0)
-
     env = os.environ.copy()
     env["LITEHARNESS_AGENT_ID"] = agent_id
+    env["PYTHONUNBUFFERED"] = "1"
 
     subprocess.Popen(
-        [launcher, str(WATCHER_PATH)],
+        [sys.executable, str(WATCHER_PATH)],
         env=env,
         stdin=subprocess.DEVNULL,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-        creationflags=creationflags,
-        close_fds=True,
+        stdout=None if sys.stdout.isatty() else subprocess.DEVNULL,
+        stderr=None if sys.stderr.isatty() else subprocess.DEVNULL,
         cwd=str(WATCHER_PATH.parent),
     )
 

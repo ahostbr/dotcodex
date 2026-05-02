@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
-"""Keep the LiteHarness inbox watcher alive on Windows."""
+"""Keep the LiteHarness inbox watcher alive on Windows.
+
+The supervisor owns the watcher as an attached child process. Running this
+script directly should stream watcher stdout back to the caller, and stopping
+the supervisor should also stop the watcher.
+"""
 
 from __future__ import annotations
 
 import atexit
 import json
 import os
+import signal
 import subprocess
 import sys
+import threading
 import time
 from pathlib import Path
 
@@ -18,6 +25,9 @@ AGENT_CONFIG_PATH = HARNESS_ROOT / "codex_agent.json"
 WATCHER_PATH = Path(__file__).with_name("liteharness_inbox_watcher.py")
 RESTART_DELAY_SEC = 2.0
 PROCESS_AGENT_ID: str | None = None
+STOP_REQUESTED = threading.Event()
+WATCHER_PROCESS: subprocess.Popen[bytes] | None = None
+HEARTBEAT_INTERVAL_SEC = 5.0
 
 
 def agent_slug(agent_id: str) -> str:
@@ -55,6 +65,11 @@ def append_log(message: str) -> None:
         handle.write(f"[{timestamp}] {message}\n")
 
 
+def emit(message: str) -> None:
+    append_log(message)
+    print(f"[LiteHarness watcher supervisor] {message}", flush=True)
+
+
 def write_pid_file() -> None:
     STATE_ROOT.mkdir(parents=True, exist_ok=True)
     payload = {"pid": os.getpid(), "started_at": time.time()}
@@ -80,16 +95,12 @@ def write_heartbeat(*, watcher_pid: int | None = None, last_error: str | None = 
         "updated_at": time.time(),
         "watcher_pid": watcher_pid,
         "last_error": last_error,
+        "process_model": "attached",
     }
     supervisor_heartbeat_path().write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 def watcher_launcher() -> str:
-    python_exe = Path(sys.executable)
-    if python_exe.name.lower() == "python.exe":
-        pythonw = python_exe.with_name("pythonw.exe")
-        if pythonw.exists():
-            return str(pythonw)
     return sys.executable
 
 
@@ -114,48 +125,86 @@ def current_agent_id() -> str | None:
 
 
 def launch_watcher() -> subprocess.Popen[bytes]:
-    creationflags = 0
-    for name in ("CREATE_NEW_PROCESS_GROUP", "DETACHED_PROCESS", "CREATE_NO_WINDOW"):
-        creationflags |= getattr(subprocess, name, 0)
-
     launcher = watcher_launcher()
-    append_log(f"starting watcher via {launcher}")
+    emit(f"starting attached watcher via {launcher}")
     env = os.environ.copy()
+    env["PYTHONUNBUFFERED"] = "1"
     agent_id = current_agent_id()
     if agent_id:
         env["LITEHARNESS_AGENT_ID"] = agent_id
     return subprocess.Popen(
-        [launcher, str(WATCHER_PATH)],
+        [launcher, str(WATCHER_PATH), "--print"],
         env=env,
         stdin=subprocess.DEVNULL,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-        creationflags=creationflags,
-        close_fds=True,
         cwd=str(WATCHER_PATH.parent),
     )
 
 
+def current_watcher_pid() -> int | None:
+    watcher = WATCHER_PROCESS
+    return watcher.pid if watcher is not None else None
+
+
+def heartbeat_loop() -> None:
+    while not STOP_REQUESTED.wait(HEARTBEAT_INTERVAL_SEC):
+        try:
+            write_heartbeat(watcher_pid=current_watcher_pid())
+        except Exception as exc:
+            append_log(f"heartbeat write failed: {exc!r}")
+
+
+def terminate_watcher() -> None:
+    watcher = WATCHER_PROCESS
+    if watcher is None:
+        return
+    if watcher.returncode is not None:
+        return
+    try:
+        watcher.terminate()
+        watcher.wait(timeout=5.0)
+    except subprocess.TimeoutExpired:
+        watcher.kill()
+        try:
+            watcher.wait(timeout=5.0)
+        except subprocess.TimeoutExpired:
+            append_log(f"watcher pid {watcher.pid} did not exit after kill")
+    except OSError:
+        pass
+
+
+def request_stop(_signum: int | None = None, _frame: object | None = None) -> None:
+    STOP_REQUESTED.set()
+    terminate_watcher()
+
+
 def main() -> int:
+    global WATCHER_PROCESS
     write_pid_file()
     atexit.register(remove_pid_file)
-    append_log("supervisor started")
+    atexit.register(terminate_watcher)
+    for signum in ("SIGINT", "SIGTERM"):
+        signal_value = getattr(signal, signum, None)
+        if signal_value is not None:
+            signal.signal(signal_value, request_stop)
+    emit("supervisor started with attached watcher model")
+    heartbeat = threading.Thread(target=heartbeat_loop, name="liteharness-heartbeat", daemon=True)
+    heartbeat.start()
 
-    watcher: subprocess.Popen[bytes] | None = None
-
-    while True:
+    while not STOP_REQUESTED.is_set():
         try:
-            if watcher is None or watcher.poll() is not None:
-                if watcher is not None:
-                    append_log(f"watcher exited with code {watcher.returncode}; restarting")
-                    time.sleep(RESTART_DELAY_SEC)
-                watcher = launch_watcher()
-            write_heartbeat(watcher_pid=watcher.pid if watcher else None)
-            time.sleep(5.0)
-        except Exception as exc:
-            append_log(f"supervisor loop failed: {exc!r}")
-            write_heartbeat(watcher_pid=watcher.pid if watcher else None, last_error=repr(exc))
+            WATCHER_PROCESS = launch_watcher()
+            write_heartbeat(watcher_pid=current_watcher_pid())
+            return_code = WATCHER_PROCESS.wait()
+            if STOP_REQUESTED.is_set():
+                break
+            emit(f"watcher exited with code {return_code}; restarting")
             time.sleep(RESTART_DELAY_SEC)
+        except Exception as exc:
+            emit(f"supervisor loop failed: {exc!r}")
+            write_heartbeat(watcher_pid=current_watcher_pid(), last_error=repr(exc))
+            time.sleep(RESTART_DELAY_SEC)
+    emit("supervisor stopped")
+    return 0
 
 
 if __name__ == "__main__":
