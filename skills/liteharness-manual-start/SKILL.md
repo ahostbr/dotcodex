@@ -30,10 +30,11 @@ python scripts/manual_liteharness.py discover
 python scripts/manual_liteharness.py send <agent-id> "message"
 ```
 
-4. Use watch mode only when a long-running foreground process is acceptable. In Codex Desktop, prefer `codex-monitor` plus manual `check`; foreground watch mode can claim messages and prevent desktop auto-injection.
+4. Use stdout watch mode only when a long-running foreground process is acceptable. For Codex terminal sessions, prefer the attached supervisor:
 
 ```bash
-python scripts/manual_liteharness.py watch
+$env:LITEHARNESS_AGENT_ID="<agent-id>"
+python "C:\Users\Ryan\.codex\skills\liteharness\scripts\liteharness_watcher_supervisor.py"
 ```
 
 ## Operational Notes
@@ -50,7 +51,7 @@ python scripts/manual_liteharness.py start --root ".liteharness/codex-cli"
 - This stable identity is required so other agents can reply after compaction, watcher restarts, or repeated manual bootstrap calls.
 - Use `--fresh-agent` only when you intentionally want to rotate to a new identity inside the same session.
 - If `check` reports no messages, continue normally. This skill is a manual fallback for hookless environments, not a blocker.
-- Codex monitor implementation changes must be tested by running `liteharness_watcher_supervisor.py` directly with `LITEHARNESS_AGENT_ID` set and confirming attached watcher stdout streams live before committing.
+- Codex watcher implementation changes must be tested by running `liteharness_watcher_supervisor.py` directly with `LITEHARNESS_AGENT_ID` set, sending the agent a LiteHarness message, and confirming the message prints to stdout. Do not use UIAutomation, clipboard paste, SendKeys, or pane injection in the Codex watcher path.
 
 ## Script
 

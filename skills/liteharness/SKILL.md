@@ -15,7 +15,7 @@ Every agent MUST register on activation. Choose the inbox monitor path for the c
    ```
    Monitor({ description: "LiteHarness inbox", persistent: true, timeout_ms: 3600000, command: "python -m liteharness.hooks watch --agent-id <YOUR-AGENT-ID>" })
    ```
-2. **Codex Desktop sessions: do not start `python -m liteharness.hooks watch` for the same agent ID.** Use `manual_liteharness.py start --check-now`, then `manual_liteharness.py check` and `manual_liteharness.py codex-monitor status/logs` as needed. The legacy `hooks watch` path prints to stdout and renames messages to `done/`, so it can steal messages before the Codex Desktop auto-injector fires.
+2. **Codex terminal sessions: use stdout delivery.** Start `C:\Users\Ryan\.codex\skills\liteharness\scripts\liteharness_watcher_supervisor.py` in an attached terminal with `LITEHARNESS_AGENT_ID=<YOUR-AGENT-ID>`. The supervisor only runs `python -m liteharness.hooks watch --agent-id <YOUR-AGENT-ID>` and streams stdout. There is no UIAutomation, clipboard paste, SendKeys, or pane injection in the Codex watcher stack.
 3. **Register with correct info:**
    ```bash
    python -m liteharness.cli register --agent-id <YOUR-AGENT-ID> --cli claude-code --model <your-model>
@@ -66,22 +66,20 @@ Always pass `--from` with YOUR full UUID. Without it, sender detection may be wr
 
 ### Codex Inbox Watcher Safety
 
-The standalone Codex inbox watcher must only inject into a verified target pane. Do not treat "focused Windows Terminal pane", "first pane in this Windows Terminal window", or process ancestry alone as a valid target; Windows Terminal can host several tabs/panes under the same process, and focus can belong to Sentinel or another agent.
+The Codex watcher delivery mechanism is stdout. Do not add target discovery, UIAutomation, clipboard paste, SendKeys, or window/pane injection to the Codex watcher scripts. The canonical supervisor is intentionally thin:
 
-Correct targeting flow for Codex/WT delivery:
+```powershell
+$env:LITEHARNESS_AGENT_ID="<agent-id>"
+python "C:\Users\Ryan\.codex\skills\liteharness\scripts\liteharness_watcher_supervisor.py"
+```
 
-1. Resolve the target agent ID from the SessionStart UUID or `LITEHARNESS_AGENT_ID`.
-2. Prefer `liteharness.terminal_automation.find_pane_by_buffer_markers([...])` with markers such as the full agent UUID, transcript filename stem, or thread ID.
-3. Store `target.json` only when the pane buffer identifies that agent/session. A good target records `capture: "agent-buffer"` and `matched_markers`.
-4. Before injecting, validate the saved pane with `read_buffer(handle, pane_id)` and clear the target if the buffer no longer identifies the agent.
-5. Restart the per-agent monitor after targeting-code changes:
-   ```powershell
-   $env:LITEHARNESS_AGENT_ID="<agent-id>"; python "C:\Users\Ryan\.codex\skills\liteharness-manual-start\scripts\manual_liteharness.py" codex-monitor restart
-   ```
+That supervisor launches:
 
-Use `codex-monitor status` and the per-agent watcher log to verify delivery. A correct headed delivery log names the exact WT pane, for example `injected message ... into 133230:0`; it must not say Codex Desktop when the recipient is a terminal agent.
+```bash
+python -m liteharness.hooks watch --agent-id <agent-id>
+```
 
-The Codex monitor supervisor now uses an attached child-process model for `liteharness_inbox_watcher.py`: no `pythonw`, `DETACHED_PROCESS`, or hidden watcher process group. When testing watcher implementation changes, run `liteharness_watcher_supervisor.py` directly with `LITEHARNESS_AGENT_ID` set and confirm stdout streams live from the attached watcher before committing.
+`liteharness.hooks watch` owns inbox filtering, claiming, printing, and completion. When testing watcher changes, start the supervisor in an attached terminal, send the agent a LiteHarness message, and confirm the message prints to stdout without any window manipulation.
 
 ## Spawning Agents
 
